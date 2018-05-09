@@ -6,22 +6,23 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-/**
- */
 
+/**
+ * onMesure() 测量简单模式
+ */
 public class MyView extends View {
 
 
-    private   Context context;
+    private Context context;
 
     public MyView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        this.context=context;
+        this.context = context;
     }
 
     public MyView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        this.context=context;
+        this.context = context;
     }
 
     @Override
@@ -80,7 +81,7 @@ public class MyView extends View {
                 size = Math.min(size, specSize);
             }
         }
-        px2dp(context,Float.valueOf(size));
+        px2dp(context, Float.valueOf(size));
 
         return size;
 

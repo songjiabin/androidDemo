@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,10 +8,10 @@
     tools:context="com.example.mydemo.MainActivity">
 
 
-    <com.example.mydemo.view.MyView
-        android:layout_width="50dp"
-        android:background="@android:color/holo_red_dark"
-        android:layout_height="50dp" />
+    <com.example.mydemo.view.MyViewForTextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="我是宋佳宾"/>
 
 
 </android.support.constraint.ConstraintLayout>
