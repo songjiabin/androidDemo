@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,10 +7,19 @@
     tools:context="com.example.mydemo.MainActivity">
 
 
-    <com.example.mydemo.view.MyViewForTextView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="我是宋佳宾"/>
+    <com.example.mydemo.view.MyToolBar
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="50dp"
+        app:leftText="取消"
+        app:leftBackground="@android:color/darker_gray"
+        app:titleTextColor="@android:color/holo_red_dark"
+        app:rightTextColor="@android:color/holo_red_dark"
+        app:leftTextColor="@android:color/holo_red_dark"
+        app:rightText="确定"
+        app:title="标题">
+
+    </com.example.mydemo.view.MyToolBar>
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
