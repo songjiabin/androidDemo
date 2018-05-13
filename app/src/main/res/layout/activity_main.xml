@@ -7,19 +7,9 @@
     tools:context="com.example.mydemo.MainActivity">
 
 
-    <com.example.mydemo.view.MyToolBar
-        android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
-        android:layout_height="50dp"
-        app:leftText="取消"
-        app:leftBackground="@android:color/darker_gray"
-        app:titleTextColor="@android:color/holo_red_dark"
-        app:rightTextColor="@android:color/holo_red_dark"
-        app:leftTextColor="@android:color/holo_red_dark"
-        app:rightText="确定"
-        app:title="标题">
-
-    </com.example.mydemo.view.MyToolBar>
+     <com.example.mydemo.view.MyProgressBar
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" />
 
 
 </LinearLayout>
