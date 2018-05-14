@@ -124,4 +124,15 @@ public class MyProgressBar extends View {
         canvas.drawText(mShowText, 0, mShowText.length(),
                 mCircleXY, mCircleXY + (mShowTextSize / 4), mTextPaint);
     }
+
+    public void setSweepValue(float sweepValue) {
+        if (sweepValue != 0) {
+            mSweepValue = sweepValue;
+        } else {
+            mSweepValue = 25;
+        }
+        mSweepAngle = (mSweepValue / 100f) * 360f;
+        this.invalidate();
+    }
+
 }
