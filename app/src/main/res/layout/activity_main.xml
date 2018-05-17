@@ -8,7 +8,7 @@
    >
 
 
-     <com.example.mydemo.view.MyProgressBar
+     <com.example.mydemo.view.VolumeView
          android:id="@+id/myProgressBar"
          android:layout_width="match_parent"
          android:layout_weight="1"
@@ -18,11 +18,6 @@
 
 
 
-     <Button
-         android:id="@+id/btn_click"
-         android:layout_width="match_parent"
-         android:text="按钮"
-         android:layout_height="wrap_content" />
 
 
 </LinearLayout>
