@@ -6,12 +6,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
-
-import com.example.mydemo.utils.ScreenUtils;
-
-import java.util.logging.MemoryHandler;
 
 /**
  * 重写View实现全新的控件
