@@ -37,7 +37,7 @@ public class MyViewForTextView extends android.support.v7.widget.AppCompatTextVi
         mPaint1.setStyle(Paint.Style.FILL);
 
         mPaint2 = new Paint();
-        mPaint2.setColor(Color.BLACK);
+        mPaint2.setColor(Color.BLUE);
         mPaint2.setStyle(Paint.Style.FILL);
 
 
