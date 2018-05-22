@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import android.support.annotation.Nullable;
@@ -21,6 +22,9 @@ public class MyViewForTextView extends android.support.v7.widget.AppCompatTextVi
     private Paint mPaint1;
     private Paint mpaint;//绘制文本的paint
     private int mViewWith = 0;
+    private LinearGradient mLinearGradient;
+    private Matrix mGradientMarix;
+    private int mTranslate;
 
     public MyViewForTextView(Context context) {
         super(context);
@@ -33,7 +37,7 @@ public class MyViewForTextView extends android.support.v7.widget.AppCompatTextVi
         mPaint1.setStyle(Paint.Style.FILL);
 
         mPaint2 = new Paint();
-        mPaint2.setColor(Color.YELLOW);
+        mPaint2.setColor(Color.BLUE);
         mPaint2.setStyle(Paint.Style.FILL);
 
 
@@ -59,6 +63,19 @@ public class MyViewForTextView extends android.support.v7.widget.AppCompatTextVi
         // 在 super之后 写 即： 对TextVie来说就是在绘制文本之后加入你想做的操作
         canvas.restore(); // 返回最新的save状态，即状态2
 
+
+        //一秒钟执行一次
+        if (mGradientMarix != null) {
+            mTranslate += mViewWith / 5;
+            if (mTranslate > 2 * mViewWith) {
+                mTranslate = -mViewWith;
+            }
+            mGradientMarix.setTranslate(mTranslate, 0);
+            mLinearGradient.setLocalMatrix(mGradientMarix);
+            postInvalidateDelayed(100);
+        }
+
+
     }
 
 
@@ -75,12 +92,11 @@ public class MyViewForTextView extends android.support.v7.widget.AppCompatTextVi
         if (mViewWith == 0) {
             mViewWith = getMeasuredWidth();
             if (mViewWith > 0) {
-                mpaint = getPaint();
-                new LinearGradient(0, 0, mViewWith, 0, new int[]{Color.BLUE, 0xffffffff, Color.BLUE}, null, Shader.TileMode.CLAMP);
-
+                mpaint = getPaint();//得到用来绘制textview的paint
+                mLinearGradient = new LinearGradient(0, 0, mViewWith, 0, new int[]{Color.BLUE, 0xffffffff, Color.BLUE}, null, Shader.TileMode.CLAMP);
+                mpaint.setShader(mLinearGradient);
+                mGradientMarix = new Matrix();
             }
         }
-
-
     }
 }

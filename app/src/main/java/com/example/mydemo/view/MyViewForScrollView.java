@@ -2,9 +2,11 @@ package com.example.mydemo.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Scroller;
 
 import com.example.mydemo.utils.ScreenUtils;
 
@@ -18,6 +20,8 @@ public class MyViewForScrollView extends ViewGroup {
     private int mScreenHeight;
     private int mLastY;
     private int mStart;
+    private Scroller mScroller;
+
 
     public MyViewForScrollView(Context context) {
         super(context);
@@ -26,6 +30,7 @@ public class MyViewForScrollView extends ViewGroup {
 
     public MyViewForScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        initView(context);
     }
 
     public MyViewForScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -36,7 +41,9 @@ public class MyViewForScrollView extends ViewGroup {
     private void initView(Context context) {
         //得到屏幕的高度
         mScreenHeight = ScreenUtils.getScreenHeight(context);
-
+        //我把scroller理解为滚动数据携带器，
+        // 他只是一个记录滚动数据的工具，并不显示view的滚动效果，其实这点我觉得和安卓的属性动画挺像，他只提供数据，具体要怎么做，就看你的了。
+        mScroller = new Scroller(context);
     }
 
 
@@ -71,20 +78,95 @@ public class MyViewForScrollView extends ViewGroup {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        //获取相对于控件的坐标
         int y = (int) event.getY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 //按下的时候
                 mLastY = y;
+                //获取偏移量 相对于起始位置的偏移量
                 mStart = getScrollY();
+//                Log.i("SJB", mStart + "");
                 break;
             case MotionEvent.ACTION_MOVE:
                 //移动的时候
+                if (!mScroller.isFinished()) {
+//                    Scroller滚动到最终x与y位置时中止动画。
+                    mScroller.abortAnimation();
+                }
+                // Y的偏移量 =   当时按下的 Y坐标  - 当前的坐标
+                int dy = mLastY - y;
+
+
+                int getScrollY = getScrollY();
+                Log.i("SJB", "--------getScrollY------" + getScrollY );
+
+
+                int height = getHeight() - mScreenHeight;
+
+                if (getScrollY() < 0) {
+                    dy = 0;
+                }
+
+                //如果便宜量 >
+                if (getScrollY() > getHeight() - mScreenHeight) {
+                    dy = 0;
+                }
+                scrollBy(0, dy);
+                mLastY = y;
+
+                break;
+            case MotionEvent.ACTION_UP:
+                int dScrollY = checkAlignment();
+                if (dScrollY > 0) {
+                    if (dScrollY < mScreenHeight / 3) {
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, -dScrollY);
+                    } else {
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, mScreenHeight - dScrollY);
+                    }
+                } else {
+                    if (-dScrollY < mScreenHeight / 3) {
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, -dScrollY);
+                    } else {
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, -mScreenHeight - dScrollY);
+                    }
+                }
                 break;
         }
+        //异步刷新界面
+        postInvalidate();
+        return true;
 
+    }
 
-        return super.onTouchEvent(event);
+    private int checkAlignment() {
+        Log.i("SJB", "--------getScrollY------" + getScrollY() );
+        int mEnd = getScrollY();
+        boolean isUp = ((mEnd - mStart) > 0) ? true : false;
+        int lastPrev = mEnd % mScreenHeight;
+        int lastNext = mScreenHeight - lastPrev;
+        if (isUp) {
+            //向上的
+            return lastPrev;
+        } else {
+            return -lastNext;
+        }
+    }
 
+    @Override
+    public void computeScroll() {
+        super.computeScroll();
+        if (mScroller.computeScrollOffset()) {
+            scrollTo(0, mScroller.getCurrY());
+            postInvalidate();
+        }
     }
 }

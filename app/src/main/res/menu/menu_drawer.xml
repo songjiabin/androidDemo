@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--利用 group 可以有分割线效果-->
+    <group android:id="@+id/menu_drawer_group0">
+        <item android:id="@+id/menu_drawer_item_measure"
+
+              android:title="简单的测量"/>
+
+
+    </group>
+
+    <group android:id="@+id/menu_drawer_group1">
+        <item android:id="@+id/menu_drawer_item_textview"
+
+              android:title="自定义TextView"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group2">
+        <item android:id="@+id/menu_drawer_item_progress"
+              android:title="自定义的Progress"/>
+    </group>
+
+
+    <group android:id="@+id/menu_drawer_group3">
+        <item android:id="@+id/menu_drawer_item_music"
+              android:title="自定义的音乐播放器"/>
+    </group>
+
+    <group android:id="@+id/menu_drawer_group4">
+        <item android:id="@+id/menu_drawer_item_mytoolbar"
+              android:title="自定义的ToolBar"/>
+    </group>
+
+    <group android:id="@+id/menu_drawer_group5">
+        <item android:id="@+id/menu_drawer_item_myScrollView"
+              android:title="自定义的ScrollView"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group6">
+        <item android:id="@+id/menu_drawer_item_eventMotion"
+              android:title="学习触摸事件"/>
+    </group>
+</menu>
