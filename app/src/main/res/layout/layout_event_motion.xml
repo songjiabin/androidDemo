@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+    <com.example.mydemo.view.MyViewGroupA
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MyGroupViewA"
+            android:textColor="@android:color/black"/>
+
+
+        <com.example.mydemo.view.MyViewGroupB
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="70dp"
+            android:background="@android:color/holo_red_dark">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MyGroupViewB"
+                android:textColor="@android:color/black"/>
+
+        </com.example.mydemo.view.MyViewGroupB>
+
+
+        <com.example.mydemo.view.MyViewC android:layout_width="match_parent"
+                                         android:layout_height="match_parent"
+                                         android:layout_margin="130dp"
+                                         android:background="@android:color/holo_green_dark"
+
+                                         android:text="MyView"
+                                         android:textColor="@android:color/black"
+                                         android:textSize="16sp">
+
+        </com.example.mydemo.view.MyViewC>
+
+
+    </com.example.mydemo.view.MyViewGroupA>
+
+
+</LinearLayout>

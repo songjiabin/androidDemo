@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.fragment.MyScrollViewFragment;
 import com.example.mydemo.fragment.ShowFragment;
 import com.example.mydemo.fragment.ToolBarFragment;
 
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         //京东RunningMan动画效果，和本次Toolbar无关
-
 
 
         tl_custom.setTitleTextColor(Color.parseColor("#ffffff")); //设置标题颜色
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         // 步骤2：获取FragmentTransaction
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         ShowFragment showFragment = null;
-        showFragment = ShowFragment.newInstance(R.layout.layout_my_textview);
+        showFragment = ShowFragment.newInstance(R.layout.layout_measure);
         fragmentTransaction.replace(R.id.fragment, showFragment);
         fragmentTransaction.commit();
 
@@ -113,6 +113,11 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (item.getItemId()) {
+            case R.id.menu_drawer_item_measure:
+                tl_custom.setTitle("自定义简单的测量");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_measure);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
             case R.id.menu_drawer_item_textview:
                 tl_custom.setTitle("自定义TextView");//设置Toolbar标题
                 showFragment = ShowFragment.newInstance(R.layout.layout_my_textview);
@@ -123,10 +128,21 @@ public class MainActivity extends AppCompatActivity {
                 showFragment = ShowFragment.newInstance(R.layout.layout_my_progress);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
                 break;
+            case R.id.menu_drawer_item_music:
+                tl_custom.setTitle("自定义音乐播放器");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_volume_view);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
             case R.id.menu_drawer_item_mytoolbar:
                 tl_custom.setTitle("自定义ToolBar");//设置Toolbar标题
                 ToolBarFragment toolBarFragment = ToolBarFragment.newInstance(R.layout.layout_toolbar);
                 fragmentTransaction.replace(R.id.fragment, toolBarFragment);
+                break;
+            case R.id.menu_drawer_item_myScrollView:
+                //需要放到 activity中
+                tl_custom.setTitle("自定义ScrollView");//设置Toolbar标题
+                MyScrollViewFragment scrollViewFragment = MyScrollViewFragment.newInstance(R.layout.layout_my_scrollview);
+                fragmentTransaction.replace(R.id.fragment, scrollViewFragment);
                 break;
             default:
                 break;

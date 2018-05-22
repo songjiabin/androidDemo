@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.widget.Toast;
 
 import com.example.mydemo.R;
 import com.example.mydemo.view.MyToolBar;
@@ -19,7 +20,7 @@ import com.example.mydemo.view.MyToolBar;
  * version: 1.0.0
  */
 
-public class ToolBarFragment extends Fragment {
+public class ToolBarFragment extends Fragment   {
 
     @LayoutRes
     int sampleLayoutRes;
@@ -43,19 +44,20 @@ public class ToolBarFragment extends Fragment {
         sampleStub.inflate();
 
 
-        View layoutView = LayoutInflater.from(getActivity()).inflate(sampleLayoutRes, null);
-        myToolBar = (MyToolBar) layoutView.findViewById(R.id.myToolBar);
+
+        myToolBar = (MyToolBar) view.findViewById(R.id.myToolBar);
         myToolBar.setmToolBarClick(new MyToolBar.toolbarClickListener() {
             @Override
             public void liftClick() {
-
+                Toast.makeText(getActivity(),"左边啦",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void rightClick() {
-
+                Toast.makeText(getActivity(),"右边啦",Toast.LENGTH_SHORT).show();
             }
         });
+
         return view;
     }
 
@@ -67,5 +69,6 @@ public class ToolBarFragment extends Fragment {
             sampleLayoutRes = args.getInt("sampleLayoutRes");
         }
     }
+
 
 }

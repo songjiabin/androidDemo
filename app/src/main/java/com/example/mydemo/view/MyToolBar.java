@@ -30,7 +30,7 @@ public class MyToolBar extends RelativeLayout {
     private LayoutParams mLeftParams;
     private LayoutParams mRightParams;
     private LayoutParams mTitleParams;
-
+    public toolbarClickListener mToolBarClick;
 
     public MyToolBar(Context context) {
         super(context);
@@ -116,22 +116,27 @@ public class MyToolBar extends RelativeLayout {
         mLeftButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mToolBarClick.liftClick();
+
+                if (mToolBarClick != null)
+                    mToolBarClick.liftClick();
             }
         });
         mRightButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mToolBarClick.rightClick();
+                if (mToolBarClick != null)
+                    mToolBarClick.rightClick();
             }
         });
     }
 
-    public toolbarClickListener mToolBarClick;
+
 
     //暴露一个方法给调用者来注册借口回调
     public void setmToolBarClick(toolbarClickListener mToolBarClick) {
         this.mToolBarClick = mToolBarClick;
+
+
     }
 
     public interface toolbarClickListener {
