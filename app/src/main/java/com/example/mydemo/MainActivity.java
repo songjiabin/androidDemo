@@ -15,9 +15,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.fragment.MyListViewFragment;
 import com.example.mydemo.fragment.MyScrollViewFragment;
 import com.example.mydemo.fragment.ShowFragment;
 import com.example.mydemo.fragment.ToolBarFragment;
+import com.orhanobut.logger.Logger;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +40,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initDrawer();
         initView();
-
+        Logger.d("debug");
+        Logger.e("error");
+        Logger.w("warning");
+        Logger.v("verbose");
+        Logger.i("information");
+        Logger.wtf("What a Terrible Failure");
+        Logger.json("{\n" +
+                "\"employees\": [\n" +
+                "{ \"firstName\":\"Bill\" , \"lastName\":\"Gates\" },\n" +
+                "{ \"firstName\":\"George\" , \"lastName\":\"Bush\" },\n" +
+                "{ \"firstName\":\"Thomas\" , \"lastName\":\"Carter\" }\n" +
+                "]\n" +
+                "}");
     }
 
 
@@ -143,6 +157,12 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("自定义ScrollView");//设置Toolbar标题
                 MyScrollViewFragment scrollViewFragment = MyScrollViewFragment.newInstance(R.layout.layout_my_scrollview);
                 fragmentTransaction.replace(R.id.fragment, scrollViewFragment);
+                break;
+            case R.id.menu_drawer_item_myListView:
+                //需要放到 activity中
+                tl_custom.setTitle("自定义ListView");//设置Toolbar标题
+                MyListViewFragment listViewFragment = MyListViewFragment.newInstance(R.layout.layout_my_listview);
+                fragmentTransaction.replace(R.id.fragment, listViewFragment);
                 break;
             default:
                 break;

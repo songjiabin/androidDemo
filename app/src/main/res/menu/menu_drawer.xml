@@ -35,7 +35,7 @@
               android:title="自定义的ScrollView"/>
     </group>
     <group android:id="@+id/menu_drawer_group6">
-        <item android:id="@+id/menu_drawer_item_eventMotion"
-              android:title="学习触摸事件"/>
+        <item android:id="@+id/menu_drawer_item_myListView"
+              android:title="自定义ListView"/>
     </group>
 </menu>

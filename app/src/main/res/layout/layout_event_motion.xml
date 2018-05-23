@@ -34,14 +34,15 @@
         </com.example.mydemo.view.MyViewGroupB>
 
 
-        <com.example.mydemo.view.MyViewC android:layout_width="match_parent"
-                                         android:layout_height="match_parent"
-                                         android:layout_margin="130dp"
-                                         android:background="@android:color/holo_green_dark"
+        <com.example.mydemo.view.MyViewC
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="130dp"
+            android:background="@android:color/holo_green_dark"
 
-                                         android:text="MyView"
-                                         android:textColor="@android:color/black"
-                                         android:textSize="16sp">
+            android:text="MyView"
+            android:textColor="@android:color/black"
+            android:textSize="16sp">
 
         </com.example.mydemo.view.MyViewC>
 
