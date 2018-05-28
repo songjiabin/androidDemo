@@ -15,8 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.fragment.MyListViewForToolbarHideFragment;
 import com.example.mydemo.fragment.MyListViewFragment;
 import com.example.mydemo.fragment.MyScrollViewFragment;
+import com.example.mydemo.fragment.MyScrollerFragment;
 import com.example.mydemo.fragment.ShowFragment;
 import com.example.mydemo.fragment.ToolBarFragment;
 import com.orhanobut.logger.Logger;
@@ -163,6 +165,26 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("自定义ListView");//设置Toolbar标题
                 MyListViewFragment listViewFragment = MyListViewFragment.newInstance(R.layout.layout_my_listview);
                 fragmentTransaction.replace(R.id.fragment, listViewFragment);
+                break;
+            case R.id.menu_drawer_item_myToolbarHideListView:
+                tl_custom.setTitle("自定义带有Toolbar的ListView");//设置Toolbar标题
+                MyListViewForToolbarHideFragment myListViewForToolbarHideFragment = MyListViewForToolbarHideFragment.newInstance(R.layout.layout_my_listview_for_toolbar_hide);
+                fragmentTransaction.replace(R.id.fragment, myListViewForToolbarHideFragment);
+                break;
+            case R.id.menu_drawer_item_move:
+                tl_custom.setTitle("自定义跟着手势运动的View");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_move_view);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_move_for_layoutparams:
+                tl_custom.setTitle("自定义跟着手势运动的View");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_move_view_for_layoutparmas);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_scroller:
+                tl_custom.setTitle("scroller使用");//设置Toolbar标题
+                MyScrollerFragment  myScrollerFragment= MyScrollerFragment.newInstance(R.layout.layout_move_view_for_layoutparmas);
+                fragmentTransaction.replace(R.id.fragment, myScrollerFragment);
                 break;
             default:
                 break;

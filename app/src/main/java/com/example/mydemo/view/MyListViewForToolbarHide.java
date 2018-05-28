@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ListView;
 
 import com.example.mydemo.utils.ScreenUtils;
@@ -49,12 +49,11 @@ public class MyListViewForToolbarHide extends ListView implements View.OnTouchLi
         //手动添加一个ListView  header 为了能显示 listview中的第一个
         View header = new View(context);
         //设置Header 宽高度
-        header.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ScreenUtils.dp2px(context, 50)));
+        header.setLayoutParams(new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, ScreenUtils.dp2px(context, 50)));
         this.addHeaderView(header);
         //定义一个mTouchSlop变量用来获取系统认为的最低滑动距离。 即：超过这个距离的移动，系统将其定义为滑动状态了
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-
-
+        this.setOnTouchListener(this);
     }
 
     /**

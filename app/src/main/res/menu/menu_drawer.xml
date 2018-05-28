@@ -38,4 +38,23 @@
         <item android:id="@+id/menu_drawer_item_myListView"
               android:title="自定义ListView"/>
     </group>
+    <group android:id="@+id/menu_drawer_group7">
+        <item android:id="@+id/menu_drawer_item_myToolbarHideListView"
+              android:title="自定义带有Toolbar的ListView"/>
+    </group>
+
+
+    <group android:id="@+id/menu_drawer_group8">
+        <item android:id="@+id/menu_drawer_item_move"
+              android:title="跟着手势运动的View"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group9">
+        <item android:id="@+id/menu_drawer_item_move_for_layoutparams"
+              android:title="跟着手势运动的View"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group10">
+        <item android:id="@+id/menu_drawer_item_scroller"
+              android:title="scroller使用"/>
+    </group>
+
 </menu>
