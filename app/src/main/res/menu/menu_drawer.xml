@@ -56,5 +56,16 @@
         <item android:id="@+id/menu_drawer_item_scroller"
               android:title="scroller使用"/>
     </group>
-
+    <group android:id="@+id/menu_drawer_group11">
+        <item android:id="@+id/menu_drawer_item_viewDragHelper"
+              android:title="ViewDragHelper的使用"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group12">
+        <item android:id="@+id/menu_drawer_item_shape"
+              android:title="shape AND selector 使用"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group13">
+        <item android:id="@+id/menu_drawer_item_clock"
+              android:title="自定义闹钟的使用"/>
+    </group>
 </menu>

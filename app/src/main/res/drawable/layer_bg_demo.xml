@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--第一个图层-->
+    <item android:drawable="@android:drawable/ic_menu_week"/>
+
+    <item android:bottom="10dp"
+          android:drawable="@android:drawable/ic_menu_edit"
+          android:left="10dp"
+          android:right="10dp"
+          android:top="10dp"
+    />
+
+</layer-list>

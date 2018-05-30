@@ -6,7 +6,7 @@ import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 /**
  * author : 宋佳
@@ -15,23 +15,27 @@ import android.view.ViewGroup;
  * version: 1.0.0
  */
 
-public class MyViewDragHelperView extends ViewGroup {
+public class MyViewDragHelperView extends FrameLayout {
 
 
     private ViewDragHelper mViewDragHelper;
     private View mMenuView;
     private View mMainView;
+    private int mWidth;
 
     public MyViewDragHelperView(Context context) {
         super(context);
+        initView();
     }
 
     public MyViewDragHelperView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        initView();
     }
 
     public MyViewDragHelperView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initView();
     }
 
 
@@ -47,11 +51,12 @@ public class MyViewDragHelperView extends ViewGroup {
         mMainView = getChildAt(1);
     }
 
+
     @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        mWidth = mMenuView.getMeasuredWidth();
     }
-
 
     //由上到下的拦截
     @Override
@@ -96,21 +101,46 @@ public class MyViewDragHelperView extends ViewGroup {
         /**
          * 水平的滑动
          * 想要滑动必须重写  默认的返回值 是 0 即：不发生滑动
-         *
+         * 一般情况下需要返回left即可  需要更加精确的计算padding等属性的时候，需要对left进行一些处理 并返回合适大小的值
          */
         @Override
         public int clampViewPositionHorizontal(View child, int left, int dx) {
-            return super.clampViewPositionHorizontal(child, left, dx);
+            return left;
         }
 
         /**
          * 竖直方向的滑动
          * 想要滑动必须重写  默认的返回值 是 0 即：不发生滑动
+         * 一般情况下需要返回top即可  需要更加精确的计算padding等属性的时候，需要对left进行一些处理 并返回合适大小的值
          * @param top   代表 在垂直方向上 child 移动的距离
+         * @param dy    代表 比较前一次的增量
+         *
          */
         @Override
         public int clampViewPositionVertical(View child, int top, int dy) {
-            return super.clampViewPositionVertical(child, top, dy);
+            return 0;
+        }
+
+        //拖动结束后的回调方法
+        @Override
+        public void onViewReleased(View releasedChild, float xvel, float yvel) {
+            super.onViewReleased(releasedChild, xvel, yvel);
+            //手指抬起后缓缓的移动的指定的位置
+
+            if (mMainView.getLeft() < 500) {
+                //关闭菜单
+                //相当于Scroller的startScroll
+                mViewDragHelper.smoothSlideViewTo(mMainView, 0, 0);
+                //刷新界面
+                ViewCompat.postInvalidateOnAnimation(MyViewDragHelperView.this);
+            } else {
+                //打开菜单
+                mViewDragHelper.smoothSlideViewTo(mMainView, 300, 0);
+                ViewCompat.postInvalidateOnAnimation(MyViewDragHelperView.this);
+
+            }
+
+
         }
     };
 

@@ -183,8 +183,23 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_drawer_item_scroller:
                 tl_custom.setTitle("scroller使用");//设置Toolbar标题
-                MyScrollerFragment  myScrollerFragment= MyScrollerFragment.newInstance(R.layout.layout_move_view_for_layoutparmas);
+                MyScrollerFragment myScrollerFragment = MyScrollerFragment.newInstance(R.layout.layout_move_view_for_layoutparmas);
                 fragmentTransaction.replace(R.id.fragment, myScrollerFragment);
+                break;
+            case R.id.menu_drawer_item_viewDragHelper:
+                tl_custom.setTitle("ViewDragHelper的使用");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_drag_help_view);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_shape:
+                tl_custom.setTitle("shape AND selector 使用");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_shape_demo);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_clock:
+                tl_custom.setTitle("自定义闹钟的使用");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_myclock_view);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
                 break;
             default:
                 break;
