@@ -11,16 +11,14 @@ import android.support.v7.app.AppCompatActivity;
  * version: 1.0.0
  */
 
-public class DemoActivity extends AppCompatActivity  {
+public class DemoActivity extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_myclock_view);
+        setContentView(R.layout.layout_porter_duffx_fermode_view2);
 
     }
-
-
 
 }

@@ -68,4 +68,13 @@
         <item android:id="@+id/menu_drawer_item_clock"
               android:title="自定义闹钟的使用"/>
     </group>
+    <group android:id="@+id/menu_drawer_group14">
+        <item android:id="@+id/menu_drawer_item_PorterDuffXfermode"
+              android:title="PorterDuffXfermode的使用"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group15">
+        <item android:id="@+id/menu_drawer_item_PorterDuffXfermode2"
+              android:title="刮刮乐"/>
+    </group>
+
 </menu>

@@ -201,6 +201,16 @@ public class MainActivity extends AppCompatActivity {
                 showFragment = ShowFragment.newInstance(R.layout.layout_myclock_view);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
                 break;
+            case R.id.menu_drawer_item_PorterDuffXfermode:
+                tl_custom.setTitle("PorterDuffXfermode的使用");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_porter_duffx_fermode_view);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_PorterDuffXfermode2:
+                tl_custom.setTitle("刮刮乐");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_porter_duffx_fermode_view2);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
             default:
                 break;
         }
