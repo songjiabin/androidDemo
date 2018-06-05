@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -16,7 +17,7 @@ import android.view.SurfaceView;
  * version: 1.0.0
  */
 
-public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback, Runnable {
+public class MySurfaceView2 extends SurfaceView implements SurfaceHolder.Callback, Runnable {
 
 
     private SurfaceHolder mHolder;
@@ -25,23 +26,21 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
     private Canvas mCanvas;
     //子线程标志位  用来控制子线程的
     private boolean mIsDrawing;
-    private int x = 0;
-    private int y = 0;
     private Path mPath;
     private Paint mPaint;
 
 
-    public MySurfaceView(Context context) {
+    public MySurfaceView2(Context context) {
         super(context);
         init(context);
     }
 
-    public MySurfaceView(Context context, AttributeSet attrs) {
+    public MySurfaceView2(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public MySurfaceView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MySurfaceView2(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
@@ -61,7 +60,7 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.RED);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(10);
+        mPaint.setStrokeWidth(40);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
 
@@ -72,7 +71,6 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
     public void surfaceCreated(SurfaceHolder holder) {
         // SurfaceView的创建
         mIsDrawing = true;
-        mPath.moveTo(0, 400);
         new Thread(this).start();
 
     }
@@ -90,29 +88,51 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void run() {
+        long start = System.currentTimeMillis();
         while (mIsDrawing) {
             draw();
-            x += 1;
-            y = (int) (100 * Math.sin(x * 2 * Math.PI / 180) + 400);
-            mPath.lineTo(x, y);
+        }
+
+        //防止频繁的刷新
+        long end = System.currentTimeMillis();
+        // 50 - 100
+        if (end - start < 100) {
+            try {
+                Thread.sleep(100 - (end - start));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
+
 
     private void draw() {
         try {
             mCanvas = mHolder.lockCanvas();
-            //开始绘制
-            // SurfaceView背景
             mCanvas.drawColor(Color.WHITE);
             mCanvas.drawPath(mPath, mPaint);
         } catch (Exception e) {
-            e.printStackTrace();
         } finally {
-            if (mCanvas != null) {
-                //每次绘制完 开始提交
+            if (mCanvas != null)
                 mHolder.unlockCanvasAndPost(mCanvas);
-            }
         }
-
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int x = (int) event.getX();
+        int y = (int) event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                mPath.moveTo(x, y);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                mPath.lineTo(x, y);
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+        }
+        return true;
+    }
+
 }

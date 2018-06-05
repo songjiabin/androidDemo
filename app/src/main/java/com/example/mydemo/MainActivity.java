@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.fragment.MyAnimationDemoFragment;
 import com.example.mydemo.fragment.MyListViewForToolbarHideFragment;
 import com.example.mydemo.fragment.MyListViewFragment;
 import com.example.mydemo.fragment.MyScrollViewFragment;
@@ -210,6 +211,21 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("刮刮乐");//设置Toolbar标题
                 showFragment = ShowFragment.newInstance(R.layout.layout_porter_duffx_fermode_view2);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_surfaceView:
+                tl_custom.setTitle("SurfaceView");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_my_surfaceview);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_surfaceView2:
+                tl_custom.setTitle("SurfaceView2");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_my_surfaceview2);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_animation:
+                tl_custom.setTitle("属性动画");//设置Toolbar标题
+                MyAnimationDemoFragment myAnimationDemoFragment = MyAnimationDemoFragment.newInstance(R.layout.layout_my_animation);
+                fragmentTransaction.replace(R.id.fragment, myAnimationDemoFragment);
                 break;
             default:
                 break;

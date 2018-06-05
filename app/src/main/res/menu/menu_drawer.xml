@@ -76,5 +76,17 @@
         <item android:id="@+id/menu_drawer_item_PorterDuffXfermode2"
               android:title="刮刮乐"/>
     </group>
+    <group android:id="@+id/menu_drawer_group16">
+        <item android:id="@+id/menu_drawer_item_surfaceView"
+              android:title="SurfaceView"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group17">
+        <item android:id="@+id/menu_drawer_item_surfaceView2"
+              android:title="SurfaceView2"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group18">
+        <item android:id="@+id/menu_drawer_item_animation"
+              android:title="属性动画"/>
+    </group>
 
 </menu>
