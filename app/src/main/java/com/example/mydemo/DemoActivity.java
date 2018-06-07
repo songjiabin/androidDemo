@@ -17,7 +17,7 @@ public class DemoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_my_animation);
+        setContentView(R.layout.layout_on_measure);
 
     }
 
