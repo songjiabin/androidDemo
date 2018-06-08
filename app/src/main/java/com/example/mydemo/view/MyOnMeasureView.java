@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.RelativeLayout;
+import android.view.ViewGroup;
 
 /**
  * time   : 2018/06/07
- * desc   : onMeasure（）方法
+ * desc   : onMeasure（）方法   自定义ViewGroup
  * version: 1.0.0
  */
 
-public class MyOnMeasureView extends RelativeLayout {
+public class MyOnMeasureView extends ViewGroup {
 
 
     public MyOnMeasureView(Context context) {
@@ -35,6 +35,10 @@ public class MyOnMeasureView extends RelativeLayout {
 
         /**
          * 获得此ViewGroup上级容器为其推荐的宽和高，以及计算模式
+         *
+         * 获取该ViewGroup父容器为其设置的计算模式和尺寸，大多情况下，
+         * 只要不是wrap_content，父容器都能正确的计算其尺寸。
+         * 所以我们自己需要计算如果设置为wrap_content时的宽和高，如何计算呢？那就是通过其childView的宽和高来进行计算。
          */
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
@@ -43,6 +47,7 @@ public class MyOnMeasureView extends RelativeLayout {
 
 
         // 计算出所有的childView的宽和高  //内部的方法  里面有 for
+        // 通过ViewGroup的measureChildren方法为其所有的孩子设置宽和高，此行执行完成后，childView的宽和高都已经正确的计算过了
         measureChildren(widthMeasureSpec, heightMeasureSpec);
 
 
@@ -73,6 +78,7 @@ public class MyOnMeasureView extends RelativeLayout {
 
         /**
          * 根据childView计算的出的宽和高，以及设置的margin计算容器的宽和高，主要用于容器是warp_content时
+         * 根据childView的宽和高，以及margin，计算ViewGroup在wrap_content时的宽和高。
          */
         for (int i = 0; i < cCount; i++) {
             View childView = getChildAt(i);
@@ -107,6 +113,7 @@ public class MyOnMeasureView extends RelativeLayout {
         /**
          * 如果是wrap_content设置为我们计算的值
          * 否则：直接设置为父容器计算的值
+         * 如果宽高属性值为wrap_content，则设置为43-71行中计算的值，否则为其父容器传入的宽和高。
          */
         setMeasuredDimension((widthMode == MeasureSpec.EXACTLY) ? sizeWidth
                 : width, (heightMode == MeasureSpec.EXACTLY) ? sizeHeight
@@ -172,5 +179,17 @@ public class MyOnMeasureView extends RelativeLayout {
             childView.layout(cl, ct, cr, cb);
         }
 
+    }
+
+
+    /**
+     * 需要ViewGroup能够支持margin即可，那么我们直接使用系统的MarginLayoutParams
+     *
+     * @param attrs
+     * @return
+     */
+    @Override
+    public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attrs) {
+        return new MarginLayoutParams(getContext(), attrs);
     }
 }
