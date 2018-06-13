@@ -22,6 +22,7 @@ import com.example.mydemo.fragment.MyScrollViewFragment;
 import com.example.mydemo.fragment.MyScrollerFragment;
 import com.example.mydemo.fragment.ShowFragment;
 import com.example.mydemo.fragment.ToolBarFragment;
+import com.example.mydemo.fragment.ValueAnimatorFragment;
 import com.orhanobut.logger.Logger;
 
 public class MainActivity extends AppCompatActivity {
@@ -222,8 +223,8 @@ public class MainActivity extends AppCompatActivity {
                 showFragment = ShowFragment.newInstance(R.layout.layout_my_surfaceview2);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
                 break;
-            case R.id.menu_drawer_item_animation:
-                tl_custom.setTitle("属性动画");//设置Toolbar标题
+            case R.id.menu_drawer_item_view_animation:
+                tl_custom.setTitle("视图动画");//设置Toolbar标题
                 MyAnimationDemoFragment myAnimationDemoFragment = MyAnimationDemoFragment.newInstance(R.layout.layout_my_animation);
                 fragmentTransaction.replace(R.id.fragment, myAnimationDemoFragment);
                 break;
@@ -231,6 +232,11 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("ViewGropu");//设置Toolbar标题
                 showFragment = ShowFragment.newInstance(R.layout.layout_my_viewgroup2);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_animation:
+                tl_custom.setTitle("属性动画");//设置Toolbar标题
+                ValueAnimatorFragment valueAnimatorFragment = ValueAnimatorFragment.newInstance(R.layout.fragment_value_animator);
+                fragmentTransaction.replace(R.id.fragment, valueAnimatorFragment);
                 break;
             default:
                 break;

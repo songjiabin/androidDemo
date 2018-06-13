@@ -85,11 +85,16 @@
               android:title="SurfaceView2"/>
     </group>
     <group android:id="@+id/menu_drawer_group18">
-        <item android:id="@+id/menu_drawer_item_animation"
-              android:title="属性动画"/>
+        <item android:id="@+id/menu_drawer_item_view_animation"
+              android:title="视图动画"/>
     </group>
     <group android:id="@+id/menu_drawer_group19">
         <item android:id="@+id/menu_drawer_item_myViewGroup2"
               android:title="ViewGroup2"/>
     </group>
+    <group android:id="@+id/menu_drawer_group20">
+        <item android:id="@+id/menu_drawer_item_animation"
+              android:title="属性动画"/>
+    </group>
+
 </menu>
