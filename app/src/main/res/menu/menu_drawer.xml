@@ -96,5 +96,21 @@
         <item android:id="@+id/menu_drawer_item_animation"
               android:title="属性动画"/>
     </group>
+    <group android:id="@+id/menu_drawer_group21">
+        <item android:id="@+id/menu_drawer_item_animation_demo"
+              android:title="属性动画_value_animation"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group22">
+        <item android:id="@+id/menu_drawer_item_objectAnimator_demo"
+              android:title="属性动画_ObjectAnimator"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group23">
+        <item android:id="@+id/menu_drawer_item_objectAnimator_demo2"
+              android:title="属性动画_ObjectAnimator2"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group24">
+        <item android:id="@+id/menu_drawer_item_objectAnimator_demo3"
+              android:title="属性动画_ObjectAnimator3"/>
+    </group>
 
 </menu>

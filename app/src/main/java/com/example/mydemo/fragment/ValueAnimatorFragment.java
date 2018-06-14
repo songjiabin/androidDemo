@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class ValueAnimatorFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_value_animator, container, false);
 
         // 创建动画作用对象：此处以Button为例
-        Button btn = (Button) view.findViewById(R.id.btn);
+        final Button btn = (Button) view.findViewById(R.id.btn);
 
         // 步骤1：设置属性数值的初始值 & 结束值
         ValueAnimator valueAnimator = ValueAnimator.ofInt(btn.getLayoutParams().width, ScreenUtils.dp2px(getActivity(), 500));
@@ -50,7 +51,7 @@ public class ValueAnimatorFragment extends Fragment {
 
 
         // 步骤2：设置动画的播放各种属性
-        valueAnimator.setDuration(2000);
+        valueAnimator.setDuration(10000);
         // 设置动画运行时长:2s
 
 
@@ -61,13 +62,20 @@ public class ValueAnimatorFragment extends Fragment {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 int currentValue = (Integer) animation.getAnimatedValue();
+                Log.i("数据值", currentValue + "");
+                btn.getLayoutParams().width = currentValue;
+                // 每次值变化时，将值手动赋值给对象的属性
+                // 即将每次变化后的值 赋 给按钮的宽度，这样就实现了按钮宽度属性的动态变化
+
+
+                // 步骤4：刷新视图，即重新绘制，从而实现动画效果
+                btn.requestLayout();
 
 
             }
         });
-
-
-
+        valueAnimator.start();
+        // 启动动画
 
         return view;
     }

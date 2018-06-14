@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -20,6 +21,9 @@ import com.example.mydemo.fragment.MyListViewForToolbarHideFragment;
 import com.example.mydemo.fragment.MyListViewFragment;
 import com.example.mydemo.fragment.MyScrollViewFragment;
 import com.example.mydemo.fragment.MyScrollerFragment;
+import com.example.mydemo.fragment.ObjectAnimatorFragment;
+import com.example.mydemo.fragment.ObjectAnimatorFragment2;
+import com.example.mydemo.fragment.ObjectAnimatorFragment3;
 import com.example.mydemo.fragment.ShowFragment;
 import com.example.mydemo.fragment.ToolBarFragment;
 import com.example.mydemo.fragment.ValueAnimatorFragment;
@@ -238,6 +242,26 @@ public class MainActivity extends AppCompatActivity {
                 ValueAnimatorFragment valueAnimatorFragment = ValueAnimatorFragment.newInstance(R.layout.fragment_value_animator);
                 fragmentTransaction.replace(R.id.fragment, valueAnimatorFragment);
                 break;
+            case R.id.menu_drawer_item_animation_demo:
+                tl_custom.setTitle("属性动画_value_animation");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_animation_demo);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_objectAnimator_demo:
+                tl_custom.setTitle("属性动画_ObjectAnimator");//设置Toolbar标题
+                ObjectAnimatorFragment valueAnimatorFragment1 = ObjectAnimatorFragment.newInstance(R.layout.fragment_value_animator);
+                fragmentTransaction.replace(R.id.fragment, valueAnimatorFragment1);
+                break;
+            case R.id.menu_drawer_item_objectAnimator_demo2:
+                tl_custom.setTitle("属性动画_ObjectAnimator2");//设置Toolbar标题
+                ObjectAnimatorFragment2 objectAnimatorFragment = ObjectAnimatorFragment2.newInstance(R.layout.layout_object_animator);
+                fragmentTransaction.replace(R.id.fragment, objectAnimatorFragment);
+                break;
+            case R.id.menu_drawer_item_objectAnimator_demo3:
+                tl_custom.setTitle("属性动画_ObjectAnimator3");//设置Toolbar标题
+                ObjectAnimatorFragment3 objectAnimatorFragment3 = ObjectAnimatorFragment3.newInstance(R.layout.layout_object_animator3);
+                fragmentTransaction.replace(R.id.fragment, objectAnimatorFragment3);
+                break;
             default:
                 break;
         }
@@ -246,4 +270,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+    }
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+    }
 }
