@@ -262,6 +262,16 @@ public class MainActivity extends AppCompatActivity {
                 ObjectAnimatorFragment3 objectAnimatorFragment3 = ObjectAnimatorFragment3.newInstance(R.layout.layout_object_animator3);
                 fragmentTransaction.replace(R.id.fragment, objectAnimatorFragment3);
                 break;
+            case R.id.menu_drawer_item_myEditText:
+                tl_custom.setTitle("自定义EditText");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_my_editext);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_myEditText2:
+                tl_custom.setTitle("自定义EditText2");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_my_edittext2);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
             default:
                 break;
         }

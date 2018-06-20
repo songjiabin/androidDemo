@@ -112,5 +112,12 @@
         <item android:id="@+id/menu_drawer_item_objectAnimator_demo3"
               android:title="属性动画_ObjectAnimator3"/>
     </group>
-
+    <group android:id="@+id/menu_drawer_group25">
+        <item android:id="@+id/menu_drawer_item_myEditText"
+              android:title="自定义EditText"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group26">
+        <item android:id="@+id/menu_drawer_item_myEditText2"
+              android:title="自定义EditText2"/>
+    </group>
 </menu>

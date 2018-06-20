@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.example.mydemo.view.SuperEditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:cursor="@drawable/cursor"
+        app:ic_delete="@drawable/icon_clear"
+        app:ic_left_click="@drawable/ic_left_click"
+        app:ic_left_unclick="@drawable/ic_left_unclick"/>
+
+    <com.example.mydemo.view.SuperEditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:cursor="@drawable/cursor"
+        app:ic_delete="@drawable/icon_clear"
+        app:ic_left_click="@drawable/ic_left_click"
+        app:ic_left_unclick="@drawable/ic_left_unclick"/>
+
+</LinearLayout>

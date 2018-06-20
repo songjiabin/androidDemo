@@ -12,4 +12,9 @@
     <color name="Indigo_colorPrimaryDark">#303f9f</color>
     <color name="Indigo_colorPrimary">#3f51b5</color>
     <color name="Indigo_nav_color">#4675FF</color>
+
+
+
+    <color name="lineColor_click">#1296db</color>
+    <color name="lineColor_unclick">#9b9b9b</color>
 </resources>

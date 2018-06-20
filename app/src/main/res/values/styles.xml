@@ -10,4 +10,20 @@
     <style name="AppTheme.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@android:color/white</item>
     </style>
+
+
+    <declare-styleable name="SuperEditText">
+        <attr name="ic_delete" format="reference"/>
+        <attr name="ic_left_click" format="reference" />
+        <attr name="ic_left_unclick" format="reference" />
+
+
+        <attr name="lineColor_click" format="color"  />
+        <attr name="lineColor_unclick" format="color"  />
+        <attr name="linePosition" format="integer"  />
+        <attr name="cursor" format="reference" />
+
+    </declare-styleable>
+
+
 </resources>
