@@ -120,4 +120,9 @@
         <item android:id="@+id/menu_drawer_item_myEditText2"
               android:title="自定义EditText2"/>
     </group>
+    <group android:id="@+id/menu_drawer_group27">
+        <item android:id="@+id/menu_drawer_item_my_searchView"
+              android:title="带有搜索历史的EditText"/>
+    </group>
+
 </menu>

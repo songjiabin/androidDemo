@@ -272,6 +272,11 @@ public class MainActivity extends AppCompatActivity {
                 showFragment = ShowFragment.newInstance(R.layout.layout_my_edittext2);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
                 break;
+            case R.id.menu_drawer_item_my_searchView:
+                tl_custom.setTitle("带有搜索历史的EditText");//设置Toolbar标题
+                showFragment = ShowFragment.newInstance(R.layout.layout_search_view);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
             default:
                 break;
         }

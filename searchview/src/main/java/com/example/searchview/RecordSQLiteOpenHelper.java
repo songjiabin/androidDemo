@@ -20,6 +20,17 @@ public class RecordSQLiteOpenHelper extends SQLiteOpenHelper {
     // 数据库版本号
     private static Integer version = 1;
 
+    //搜索历史的表
+    private static String name = "searchHistory.db";
+
+
+
+    public RecordSQLiteOpenHelper(Context context) {
+        super(context, name, null, version);
+    }
+
+
+
     /**
      * 构造函数
      * 在SQLiteOpenHelper的子类中，必须有该构造函数
@@ -34,8 +45,11 @@ public class RecordSQLiteOpenHelper extends SQLiteOpenHelper {
         // 必须通过super调用父类的构造函数
 
 
-        super(context, name, factory, version);
+        super(context, name, null, version);
     }
+
+
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -46,7 +60,8 @@ public class RecordSQLiteOpenHelper extends SQLiteOpenHelper {
          * SQLite数据库创建支持的数据类型： 整型数据、字符串类型、日期类型、二进制
          */
 
-        String sql = "create table person(id integer primary key autoincrement,name varchar(64),address varchar(64))";
+        // // 打开数据库 & 建立了一个叫records的表，里面只有一列name来存储历史记录：
+        String sql = "create table records(id integer primary key autoincrement,name varchar(200))";
         db.execSQL(sql);
 
         // 注：数据库实际上是没被创建 / 打开的（因该方法还没调用）

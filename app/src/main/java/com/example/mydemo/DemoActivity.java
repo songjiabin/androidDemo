@@ -1,12 +1,12 @@
 package com.example.mydemo;
 
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
-import com.example.mydemo.db.RecordSQLiteOpenHelper;
+import com.example.searchview.ICallBack;
+import com.example.searchview.SearchView;
 
 /**
  * author : 宋佳
@@ -18,23 +18,28 @@ import com.example.mydemo.db.RecordSQLiteOpenHelper;
 public class DemoActivity extends AppCompatActivity {
 
 
+    private SearchView searchView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_search);
-
-        // 步骤1：创建DatabaseHelper对象
-        // 注：此时还未创建数据库
-        SQLiteOpenHelper dbHelper = new RecordSQLiteOpenHelper(DemoActivity.this, "test_mydemo");
-
-        // 步骤2：真正创建 / 打开数据库
-        SQLiteDatabase sqliteDatabase = dbHelper.getWritableDatabase(); // 创建 or 打开 可读/写的数据库
-//        SQLiteDatabase sqliteDatabase = dbHelper.getReadableDatabase(); // 创建 or 打开 可读的数据库
+        setContentView(R.layout.layout_search_view);
 
 
+        searchView = (SearchView) findViewById(R.id.searchView);
 
 
+        searchView.setiCallBack(new ICallBack() {
+            @Override
+            public void searchAciton(String string) {
+                Toast.makeText(DemoActivity.this, "搜索", Toast.LENGTH_SHORT).show();
+            }
 
+            @Override
+            public void backAciton() {
+                Toast.makeText(DemoActivity.this, "返回", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

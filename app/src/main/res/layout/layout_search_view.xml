@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.searchview.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:searchBlockColor="#ffffff"
+        app:searchBlockHeight="150"
+        app:textColorSearch="#9b9b9b"
+        app:textHintSearch="输入查询关键字"
+        app:textSizeSearch="15sp">
+
+    </com.example.searchview.SearchView>
+
+
+</RelativeLayout>
