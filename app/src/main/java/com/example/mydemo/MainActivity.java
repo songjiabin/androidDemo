@@ -16,6 +16,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.fragment.AndroidToJsFragment;
+import com.example.mydemo.fragment.JsToAndroidFragment;
+import com.example.mydemo.fragment.JsToAndroidFragment2;
+import com.example.mydemo.fragment.JsToAndroidFragment3;
 import com.example.mydemo.fragment.MyAnimationDemoFragment;
 import com.example.mydemo.fragment.MyListViewForToolbarHideFragment;
 import com.example.mydemo.fragment.MyListViewFragment;
@@ -276,6 +280,26 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("带有搜索历史的EditText");//设置Toolbar标题
                 showFragment = ShowFragment.newInstance(R.layout.layout_search_view);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+            case R.id.menu_drawer_item_android_js:
+                tl_custom.setTitle("android 调用 JS 代码");//设置Toolbar标题
+                AndroidToJsFragment androidToJsFragment = AndroidToJsFragment.newInstance(R.layout.layout_android_js);
+                fragmentTransaction.replace(R.id.fragment, androidToJsFragment);
+                break;
+            case R.id.menu_drawer_item_android_js2:
+                tl_custom.setTitle("JS 调用 android 代码1");//设置Toolbar标题
+                JsToAndroidFragment jsToAndroidFragment = JsToAndroidFragment.newInstance(R.layout.layout_android_js2);
+                fragmentTransaction.replace(R.id.fragment, jsToAndroidFragment);
+                break;
+            case R.id.menu_drawer_item_android_js3:
+                tl_custom.setTitle("JS 调用 android 代码2");//设置Toolbar标题
+                JsToAndroidFragment2 jsToAndroidFragment2 = JsToAndroidFragment2.newInstance(R.layout.layout_android_js2);
+                fragmentTransaction.replace(R.id.fragment, jsToAndroidFragment2);
+                break;
+            case R.id.menu_drawer_item_android_js4:
+                tl_custom.setTitle("JS 调用 android 代码3");//设置Toolbar标题
+                JsToAndroidFragment3 jsToAndroidFragment3 = JsToAndroidFragment3.newInstance(R.layout.layout_android_js3);
+                fragmentTransaction.replace(R.id.fragment, jsToAndroidFragment3);
                 break;
             default:
                 break;

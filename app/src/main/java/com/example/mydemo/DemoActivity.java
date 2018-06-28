@@ -3,9 +3,10 @@ package com.example.mydemo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
-import com.example.searchview.ICallBack;
+import com.example.mydemo.js.AndroidtoJs;
 import com.example.searchview.SearchView;
 
 /**
@@ -19,6 +20,7 @@ public class DemoActivity extends AppCompatActivity {
 
 
     private SearchView searchView;
+    private WebView mWebView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,21 +28,23 @@ public class DemoActivity extends AppCompatActivity {
         setContentView(R.layout.layout_search_view);
 
 
-        searchView = (SearchView) findViewById(R.id.searchView);
+        mWebView = (WebView) findViewById(R.id.webView);
+        WebSettings webSettings = mWebView.getSettings();
 
+        // 设置与Js交互的权限
+        webSettings.setJavaScriptEnabled(true);
 
-        searchView.setiCallBack(new ICallBack() {
-            @Override
-            public void searchAciton(String string) {
-                Toast.makeText(DemoActivity.this, "搜索", Toast.LENGTH_SHORT).show();
-            }
+        // 通过addJavascriptInterface()将Java对象映射到JS对象
+        //参数1：Javascript对象名
+        //参数2：Java对象名
+        mWebView.addJavascriptInterface(new AndroidtoJs(), "test");//AndroidtoJS类对象映射到js的test对象
 
-            @Override
-            public void backAciton() {
-                Toast.makeText(DemoActivity.this, "返回", Toast.LENGTH_SHORT).show();
-            }
-        });
+        // 加载JS代码
+        // 格式规定为:file:///android_asset/文件名.html
+        mWebView.loadUrl("file:///android_asset/javascript2.html");
+
 
     }
+
 
 }
