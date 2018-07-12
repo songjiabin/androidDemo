@@ -140,5 +140,9 @@
         <item android:id="@+id/menu_drawer_item_android_js4"
               android:title="js 调用 android 代码3"/>
     </group>
+    <group android:id="@+id/menu_drawer_group32">
+        <item android:id="@+id/menu_drawer_item_webview"
+              android:title="webView"/>
+    </group>
 
 </menu>

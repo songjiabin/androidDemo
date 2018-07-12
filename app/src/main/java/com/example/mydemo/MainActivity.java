@@ -31,6 +31,7 @@ import com.example.mydemo.fragment.ObjectAnimatorFragment3;
 import com.example.mydemo.fragment.ShowFragment;
 import com.example.mydemo.fragment.ToolBarFragment;
 import com.example.mydemo.fragment.ValueAnimatorFragment;
+import com.example.mydemo.fragment.WebViewFragment;
 import com.orhanobut.logger.Logger;
 
 public class MainActivity extends AppCompatActivity {
@@ -300,6 +301,11 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("JS 调用 android 代码3");//设置Toolbar标题
                 JsToAndroidFragment3 jsToAndroidFragment3 = JsToAndroidFragment3.newInstance(R.layout.layout_android_js3);
                 fragmentTransaction.replace(R.id.fragment, jsToAndroidFragment3);
+                break;
+            case R.id.menu_drawer_item_webview:
+                tl_custom.setTitle("webView");//设置Toolbar标题
+                WebViewFragment webViewFragment = WebViewFragment.newInstance(R.layout.fragment_webview);
+                fragmentTransaction.replace(R.id.fragment, webViewFragment);
                 break;
             default:
                 break;
