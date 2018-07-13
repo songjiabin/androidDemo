@@ -144,5 +144,9 @@
         <item android:id="@+id/menu_drawer_item_webview"
               android:title="webView"/>
     </group>
+    <group android:id="@+id/menu_drawer_group33">
+        <item android:id="@+id/menu_drawer_item_event_1"
+              android:title="事件分发机制"/>
+    </group>
 
 </menu>

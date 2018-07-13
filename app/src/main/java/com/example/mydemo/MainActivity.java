@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.event.EventFragment;
 import com.example.mydemo.fragment.AndroidToJsFragment;
 import com.example.mydemo.fragment.JsToAndroidFragment;
 import com.example.mydemo.fragment.JsToAndroidFragment2;
@@ -306,6 +307,11 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("webView");//设置Toolbar标题
                 WebViewFragment webViewFragment = WebViewFragment.newInstance(R.layout.fragment_webview);
                 fragmentTransaction.replace(R.id.fragment, webViewFragment);
+                break;
+            case R.id.menu_drawer_item_event_1:
+                tl_custom.setTitle("事件分发机制");//设置Toolbar标题
+                EventFragment eventFragment = EventFragment.newInstance(R.layout.layout_fragment_event);
+                fragmentTransaction.replace(R.id.fragment, eventFragment);
                 break;
             default:
                 break;

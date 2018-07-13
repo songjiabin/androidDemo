@@ -9,7 +9,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.mydemo.R;
@@ -26,7 +25,7 @@ import io.reactivex.functions.Consumer;
  * version: 1.0.0
  */
 
-public class EventDemoActivity extends AppCompatActivity {
+public class EventDemoActivity2 extends AppCompatActivity {
 
 
     private ViewPager mViewPager;
@@ -35,7 +34,7 @@ public class EventDemoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_event);
+        setContentView(R.layout.layout_event2);
         initViews();
         initData(true);
     }
@@ -55,7 +54,7 @@ public class EventDemoActivity extends AppCompatActivity {
                 View view;
                 if (isListView) {
                     //初始化ListView
-                    ListView listView = new ListView(EventDemoActivity.this);
+                    FixListView listView = new FixListView(EventDemoActivity2.this);
                     final ArrayList<String> datas = new ArrayList<>();
                     //初始化数据，datas ,data0 ...data49
                     Flowable.range(0, 50).subscribe(new Consumer<Integer>() {
@@ -66,14 +65,14 @@ public class EventDemoActivity extends AppCompatActivity {
                     });
                     //初始化adapter
                     ArrayAdapter<String> adapter = new ArrayAdapter<>
-                            (EventDemoActivity.this, android.R.layout.simple_list_item_1, datas);
+                            (EventDemoActivity2.this, android.R.layout.simple_list_item_1, datas);
                     //设置adapter
                     listView.setAdapter(adapter);
                     //将ListView赋值给当前View
                     view = listView;
                 } else {
                     //初始化TextView
-                    TextView textView = new TextView(EventDemoActivity.this);
+                    TextView textView = new TextView(EventDemoActivity2.this);
                     //如果设置 clickable 后不存在冲突的 因为子View会消耗
                     textView.setClickable(true);
                     textView.setGravity(Gravity.CENTER);
