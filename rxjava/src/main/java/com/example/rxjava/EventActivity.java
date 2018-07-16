@@ -2,7 +2,6 @@ package com.example.rxjava;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,7 +13,7 @@ import android.view.View;
  * version: 1.0.0
  */
 
-public class EventActivity extends AppCompatActivity {
+public class EventActivity extends BaseActivity {
 
 
     @Override
