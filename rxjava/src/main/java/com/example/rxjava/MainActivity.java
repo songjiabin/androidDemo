@@ -18,6 +18,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func0;
 import rx.functions.Func1;
+import rx.observables.GroupedObservable;
 import rx.schedulers.Schedulers;
 
 public class MainActivity extends BaseActivity {
@@ -300,5 +301,138 @@ public class MainActivity extends BaseActivity {
         });
 
 
+        //使用 flatMap
+        List<Student> students = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            Student student = new Student();
+            List<Student.Course> courses = new ArrayList<>();
+            for (int j = 0; j < 6; j++) {
+                Student.Course course = new Student.Course("课程" + j);
+                courses.add(course);
+            }
+            student.setList(courses);
+            students.add(student);
+        }
+
+
+        Observable.from(students).flatMap(new Func1<Student, Observable<Student.Course>>() {
+            @Override
+            public Observable<Student.Course> call(Student student) {
+                return Observable.from(student.getList());
+            }
+        }).subscribe(new Action1<Student.Course>() {
+            @Override
+            public void call(Student.Course course) {
+                Log.e("宋佳宾", course.name);
+            }
+        });
+
+        List<Object> listObject = new ArrayList<>();
+        a a = new a();
+        b b = new b();
+        c c = new c();
+
+        listObject.add(a);
+        listObject.add(b);
+        listObject.add(c);
+
+
+        Observable from = Observable.just(listObject);
+        from.groupBy(new Func1<Object, Integer>() {
+            @Override
+            public Integer call(Object o) {
+                String name = o.getClass().getName();
+                String a = a.class.getName();
+                String b = b.class.getName();
+                String c = c.class.getName();
+                if (name.equals(a)) {
+                    return 1;
+                } else if (name.equals(b)) {
+                    return 2;
+                } else if (name.equals(c)) {
+                    return 3;
+                }
+                return 4;
+
+            }
+        }).subscribe(new Action1<GroupedObservable<Integer, Object>>() {
+            @Override
+            public void call(GroupedObservable<Integer, Object> objectIntegerGroupedObservable) {
+                int sign = objectIntegerGroupedObservable.getKey();
+
+
+                switch (sign){
+                    case 1:
+                        objectIntegerGroupedObservable.subscribe(new Action1<Object>() {
+                            @Override
+                            public void call(Object a) {
+                                Log.d("宋佳宾","class A - "+a.getClass().getName());
+                            }
+                        });
+                        break;
+                    case 2:
+                        objectIntegerGroupedObservable.subscribe(new Action1<Object>() {
+                            @Override
+                            public void call(Object a) {
+                                Log.d("宋佳宾","class B - "+a.getClass().getName());
+                            }
+                        });
+                        break;
+                    case 3:
+                        objectIntegerGroupedObservable.subscribe(new Action1<Object>() {
+                            @Override
+                            public void call(Object a) {
+                                Log.d("宋佳宾","class C - "+a.getClass().getName());
+                            }
+                        });
+                        break;
+                    default:
+                        Log.d("宋佳宾","other class");
+                        break;
+                }
+
+            }
+        });
+
+
     }
+
+    static class Student {
+
+        private List<Course> list;
+
+
+        public List<Course> getList() {
+            return list;
+        }
+
+        public void setList(List<Course> list) {
+            this.list = list;
+        }
+
+        static class Course {
+            private String name;
+
+            public Course(String name) {
+                this.name = name;
+            }
+        }
+
+
+    }
+
+
+    static class a {
+
+    }
+
+    static class b {
+
+    }
+
+    static class c {
+
+    }
+
+
 }
