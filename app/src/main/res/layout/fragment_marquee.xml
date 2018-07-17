@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.example.mydemo.view.MarqueeView
+        android:id="@+id/marqueeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="AAAAA开始啦我要开始滚动了我要我要开始滚动了我要开始滚动了我要开始滚动了我要开始滚动了开始滚动了结束了ZZZZZZ"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="15sp"
+        app:scroll_first_delay="2000"
+        app:scroll_interval="1000"
+        app:scroll_mode="mode_forever"/>
+
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始"/>
+    <Button
+        android:id="@+id/paruse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂停"/>
+
+    <Button
+        android:id="@+id/reStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重新开始"/>
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止"/>
+
+
+</LinearLayout>

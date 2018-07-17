@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.rxjava.bean.A;
+import com.example.rxjava.bean.B;
+import com.example.rxjava.bean.C;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -328,9 +332,9 @@ public class MainActivity extends BaseActivity {
         });
 
         List<Object> listObject = new ArrayList<>();
-        a a = new a();
-        b b = new b();
-        c c = new c();
+        A a = new A();
+        B b = new B();
+        C c = new C();
 
         listObject.add(a);
         listObject.add(b);
@@ -341,18 +345,20 @@ public class MainActivity extends BaseActivity {
         from.groupBy(new Func1<Object, Integer>() {
             @Override
             public Integer call(Object o) {
-                String name = o.getClass().getName();
-                String a = a.class.getName();
-                String b = b.class.getName();
-                String c = c.class.getName();
-                if (name.equals(a)) {
+
+
+                if (o instanceof A) {
                     return 1;
-                } else if (name.equals(b)) {
+                } else if (o instanceof B) {
                     return 2;
-                } else if (name.equals(c)) {
+                } else if (o instanceof C) {
                     return 3;
+                }else {
+                    return 4;
                 }
-                return 4;
+
+
+
 
             }
         }).subscribe(new Action1<GroupedObservable<Integer, Object>>() {
@@ -361,12 +367,12 @@ public class MainActivity extends BaseActivity {
                 int sign = objectIntegerGroupedObservable.getKey();
 
 
-                switch (sign){
+                switch (sign) {
                     case 1:
                         objectIntegerGroupedObservable.subscribe(new Action1<Object>() {
                             @Override
                             public void call(Object a) {
-                                Log.d("宋佳宾","class A - "+a.getClass().getName());
+                                Log.d("宋佳宾", "class A - " + a.getClass().getName());
                             }
                         });
                         break;
@@ -374,7 +380,7 @@ public class MainActivity extends BaseActivity {
                         objectIntegerGroupedObservable.subscribe(new Action1<Object>() {
                             @Override
                             public void call(Object a) {
-                                Log.d("宋佳宾","class B - "+a.getClass().getName());
+                                Log.d("宋佳宾", "class B - " + a.getClass().getName());
                             }
                         });
                         break;
@@ -382,12 +388,12 @@ public class MainActivity extends BaseActivity {
                         objectIntegerGroupedObservable.subscribe(new Action1<Object>() {
                             @Override
                             public void call(Object a) {
-                                Log.d("宋佳宾","class C - "+a.getClass().getName());
+                                Log.d("宋佳宾", "class C - " + a.getClass().getName());
                             }
                         });
                         break;
                     default:
-                        Log.d("宋佳宾","other class");
+                        Log.d("宋佳宾", "other class");
                         break;
                 }
 
@@ -418,19 +424,6 @@ public class MainActivity extends BaseActivity {
             }
         }
 
-
-    }
-
-
-    static class a {
-
-    }
-
-    static class b {
-
-    }
-
-    static class c {
 
     }
 

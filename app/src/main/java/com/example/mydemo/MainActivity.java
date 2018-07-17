@@ -21,6 +21,7 @@ import com.example.mydemo.fragment.AndroidToJsFragment;
 import com.example.mydemo.fragment.JsToAndroidFragment;
 import com.example.mydemo.fragment.JsToAndroidFragment2;
 import com.example.mydemo.fragment.JsToAndroidFragment3;
+import com.example.mydemo.fragment.MarqueeFragment;
 import com.example.mydemo.fragment.MyAnimationDemoFragment;
 import com.example.mydemo.fragment.MyListViewForToolbarHideFragment;
 import com.example.mydemo.fragment.MyListViewFragment;
@@ -312,6 +313,11 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("事件分发机制");//设置Toolbar标题
                 EventFragment eventFragment = EventFragment.newInstance(R.layout.layout_fragment_event);
                 fragmentTransaction.replace(R.id.fragment, eventFragment);
+                break;
+            case R.id.menu_drawer_item_marquee:
+                tl_custom.setTitle("跑马灯");//设置Toolbar标题
+                MarqueeFragment marqueeFragment = MarqueeFragment.newInstance(R.layout.fragment_marquee);
+                fragmentTransaction.replace(R.id.fragment, marqueeFragment);
                 break;
             default:
                 break;

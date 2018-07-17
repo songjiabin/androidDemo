@@ -148,5 +148,9 @@
         <item android:id="@+id/menu_drawer_item_event_1"
               android:title="事件分发机制"/>
     </group>
+    <group android:id="@+id/menu_drawer_group34">
+        <item android:id="@+id/menu_drawer_item_marquee"
+              android:title="跑马灯"/>
+    </group>
 
 </menu>
