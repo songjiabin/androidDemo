@@ -18,6 +18,9 @@ import android.widget.FrameLayout;
 
 import com.example.mydemo.event.EventFragment;
 import com.example.mydemo.fragment.AndroidToJsFragment;
+import com.example.mydemo.fragment.BankPickerFragment;
+import com.example.mydemo.fragment.EvaluationNegReasonFragment;
+import com.example.mydemo.fragment.EvaluationRatingFragment;
 import com.example.mydemo.fragment.JsToAndroidFragment;
 import com.example.mydemo.fragment.JsToAndroidFragment2;
 import com.example.mydemo.fragment.JsToAndroidFragment3;
@@ -318,6 +321,21 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("跑马灯");//设置Toolbar标题
                 MarqueeFragment marqueeFragment = MarqueeFragment.newInstance(R.layout.fragment_marquee);
                 fragmentTransaction.replace(R.id.fragment, marqueeFragment);
+                break;
+            case R.id.menu_drawer_item_start:
+                tl_custom.setTitle("评分系统");//设置Toolbar标题
+                EvaluationRatingFragment evaluationRatingFragment = EvaluationRatingFragment.newInstance(R.layout.fragment_marquee);
+                fragmentTransaction.replace(R.id.fragment, evaluationRatingFragment);
+                break;
+            case R.id.menu_drawer_item_chaping:
+                tl_custom.setTitle("评分系统");//设置Toolbar标题
+                EvaluationNegReasonFragment evaluationNegReasonFragment = EvaluationNegReasonFragment.newInstance(R.layout.fragment_marquee);
+                fragmentTransaction.replace(R.id.fragment, evaluationNegReasonFragment);
+                break;
+            case R.id.menu_drawer_item_yinhangxuanzeqi:
+                tl_custom.setTitle("银行卡选择");//设置Toolbar标题
+                BankPickerFragment bankPickerFragment = BankPickerFragment.newInstance(R.layout.layout_bank_picker);
+                fragmentTransaction.replace(R.id.fragment, bankPickerFragment);
                 break;
             default:
                 break;

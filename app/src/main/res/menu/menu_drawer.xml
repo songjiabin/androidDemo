@@ -152,5 +152,17 @@
         <item android:id="@+id/menu_drawer_item_marquee"
               android:title="跑马灯"/>
     </group>
+    <group android:id="@+id/menu_drawer_group35">
+        <item android:id="@+id/menu_drawer_item_start"
+              android:title="平分星星"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group36">
+        <item android:id="@+id/menu_drawer_item_chaping"
+              android:title="差评原因选择"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group37">
+        <item android:id="@+id/menu_drawer_item_yinhangxuanzeqi"
+              android:title="银行选择器"/>
+    </group>
 
 </menu>

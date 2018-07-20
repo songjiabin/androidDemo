@@ -17,4 +17,7 @@
 
     <color name="lineColor_click">#1296db</color>
     <color name="lineColor_unclick">#9b9b9b</color>
+
+
+    <color name="line_color">#85716f70</color>
 </resources>
