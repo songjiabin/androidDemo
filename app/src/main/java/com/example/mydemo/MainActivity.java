@@ -37,6 +37,7 @@ import com.example.mydemo.fragment.ShowFragment;
 import com.example.mydemo.fragment.ToolBarFragment;
 import com.example.mydemo.fragment.ValueAnimatorFragment;
 import com.example.mydemo.fragment.WebViewFragment;
+import com.example.mydemo.fragment.WeiboFragment;
 import com.orhanobut.logger.Logger;
 
 public class MainActivity extends AppCompatActivity {
@@ -336,6 +337,11 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("银行卡选择");//设置Toolbar标题
                 BankPickerFragment bankPickerFragment = BankPickerFragment.newInstance(R.layout.layout_bank_picker);
                 fragmentTransaction.replace(R.id.fragment, bankPickerFragment);
+                break;
+            case R.id.menu_drawer_item_weibozhuye:
+                tl_custom.setTitle("仿照微博主页");//设置Toolbar标题
+                WeiboFragment weiboFragment = WeiboFragment.newInstance(R.layout.layout_bank_picker);
+                fragmentTransaction.replace(R.id.fragment, weiboFragment);
                 break;
             default:
                 break;

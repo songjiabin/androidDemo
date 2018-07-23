@@ -35,6 +35,10 @@
 
         </activity>
 
+        <activity android:name=".activity.WeiboActivity">
+
+        </activity>
+
 
     </application>
 

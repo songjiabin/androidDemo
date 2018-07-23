@@ -20,4 +20,7 @@
 
 
     <color name="line_color">#85716f70</color>
+
+
+    <color name="tab_select">#F0C546</color>
 </resources>

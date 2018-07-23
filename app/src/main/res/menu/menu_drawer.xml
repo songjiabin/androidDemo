@@ -164,5 +164,9 @@
         <item android:id="@+id/menu_drawer_item_yinhangxuanzeqi"
               android:title="银行选择器"/>
     </group>
+    <group android:id="@+id/menu_drawer_group38">
+        <item android:id="@+id/menu_drawer_item_weibozhuye"
+              android:title="仿照微博主页"/>
+    </group>
 
 </menu>
