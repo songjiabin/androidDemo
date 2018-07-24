@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/white"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/activity_user_title_tabactivies_rl"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:id="@+id/activity_user_title_tabactivies_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="活动"
+                android:textColor="@color/color_activity_login_title"
+                android:textSize="14sp"/>
+
+            <View
+                android:id="@+id/activity_user_title_tabactivies_view"
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/black"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/activity_user_title_tabsalt_rl"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="15dp">
+
+            <TextView
+                android:id="@+id/activity_user_title_tabsalt_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="盐场"
+                android:textColor="@color/color_activity_login_title"
+                android:textSize="14sp"/>
+
+            <View
+                android:id="@+id/activity_user_title_tabsalt_view"
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/black"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_change_password"/>
+</LinearLayout>

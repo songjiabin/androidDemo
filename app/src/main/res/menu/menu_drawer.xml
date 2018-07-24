@@ -172,5 +172,9 @@
         <item android:id="@+id/menu_drawer_item_weibozhuye2"
               android:title="仿照微博主页2"/>
     </group>
+    <group android:id="@+id/menu_drawer_group40">
+        <item android:id="@+id/menu_drawer_item_ViewAnimationUtils"
+              android:title="ViewAnimationUtils"/>
+    </group>
 
 </menu>

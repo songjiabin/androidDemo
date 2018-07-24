@@ -36,6 +36,7 @@ import com.example.mydemo.fragment.ObjectAnimatorFragment3;
 import com.example.mydemo.fragment.ShowFragment;
 import com.example.mydemo.fragment.ToolBarFragment;
 import com.example.mydemo.fragment.ValueAnimatorFragment;
+import com.example.mydemo.fragment.ViewAnimationUtilsFragment;
 import com.example.mydemo.fragment.WebViewFragment;
 import com.example.mydemo.fragment.WeiboFragment;
 import com.orhanobut.logger.Logger;
@@ -347,6 +348,11 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("仿照微博主页2");//设置Toolbar标题
                 WeiboFragment weiboFragment2 = WeiboFragment.newInstance(R.layout.layout_bank_picker);
                 fragmentTransaction.replace(R.id.fragment, weiboFragment2);
+                break;
+            case R.id.menu_drawer_item_ViewAnimationUtils:
+                tl_custom.setTitle("ViewAnimationUtils");
+                ViewAnimationUtilsFragment viewAnimationUtilsFragment = ViewAnimationUtilsFragment.newInstance(R.layout.fragment_viewanimation_utils);
+                fragmentTransaction.replace(R.id.fragment, viewAnimationUtilsFragment);
                 break;
             default:
                 break;

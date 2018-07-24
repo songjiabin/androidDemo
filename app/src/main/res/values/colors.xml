@@ -23,4 +23,10 @@
 
 
     <color name="tab_select">#F0C546</color>
+
+
+    <color name="title_unselect">#666666</color>
+
+    <color name="gray_change_password">#FFCCCCCC</color>
+
 </resources>
