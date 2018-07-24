@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mydemo.R;
+import com.example.mydemo.activity.WeiBoActivity2;
 import com.example.mydemo.activity.WeiboActivity;
 
 /**
@@ -42,6 +43,13 @@ public class WeiboFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), WeiboActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.textview2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), WeiBoActivity2.class);
                 getActivity().startActivity(intent);
             }
         });

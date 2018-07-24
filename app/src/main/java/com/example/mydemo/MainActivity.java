@@ -343,6 +343,11 @@ public class MainActivity extends AppCompatActivity {
                 WeiboFragment weiboFragment = WeiboFragment.newInstance(R.layout.layout_bank_picker);
                 fragmentTransaction.replace(R.id.fragment, weiboFragment);
                 break;
+            case R.id.menu_drawer_item_weibozhuye2:
+                tl_custom.setTitle("仿照微博主页2");//设置Toolbar标题
+                WeiboFragment weiboFragment2 = WeiboFragment.newInstance(R.layout.layout_bank_picker);
+                fragmentTransaction.replace(R.id.fragment, weiboFragment2);
+                break;
             default:
                 break;
         }

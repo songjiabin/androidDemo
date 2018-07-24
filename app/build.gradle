@@ -74,4 +74,5 @@ dependencies {
 
 //RecyclerViewHeader
     compile 'com.bartoszlipinski:recyclerviewheader2:2.0.1'
+    compile 'com.sothree.slidinguppanel:library:3.3.1'
 }
