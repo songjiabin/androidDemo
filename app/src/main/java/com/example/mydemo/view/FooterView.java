@@ -23,9 +23,9 @@ public class FooterView extends RelativeLayout {
     private ProgressBar pb;
     private TextView tv;
 
+
+
     private int status;
-
-
 
     private ErrorListener errorListener;
     public static final int Normal = 0x01;
@@ -46,6 +46,9 @@ public class FooterView extends RelativeLayout {
 
     }
 
+    public int getStatus() {
+        return status;
+    }
 
 
     /**

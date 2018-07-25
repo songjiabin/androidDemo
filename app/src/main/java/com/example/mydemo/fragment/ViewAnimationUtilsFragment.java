@@ -67,6 +67,13 @@ public class ViewAnimationUtilsFragment extends Fragment {
     }
 
 
+    /**
+     * 第一个参数代表 操作的view
+     * 第二个参数代表 圆的x方向的中点
+     * 第三个参数代表 圆的y方向的中点
+     * 第四个参数代表 圆开始时候的半径
+     * 第五个参数代表 结束时候的半径
+     */
     // 斜线展示
     public void demo1() {
         Animator animator1 = ViewAnimationUtils.createCircularReveal(image, 0, 0, 0, (float) Math.hypot(image.getWidth(), image.getHeight()));

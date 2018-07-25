@@ -86,6 +86,20 @@ public class UserTitle extends FrameLayout implements View.OnClickListener {
         }
     }
 
+    public void setTabActivity() {
+        tv_activity.setSelected(true);
+        v_activity.setVisibility(VISIBLE);
+        tv_salt.setSelected(false);
+        v_salt.setVisibility(GONE);
+    }
+
+
+    public void setTabSalt() {
+        tv_salt.setSelected(true);
+        v_salt.setVisibility(VISIBLE);
+        tv_activity.setSelected(false);
+        v_activity.setVisibility(GONE);
+    }
 
     public interface OnTitleClickListener {
         void onClickActivies(View view);
