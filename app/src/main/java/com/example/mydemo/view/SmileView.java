@@ -1,6 +1,8 @@
 package com.example.mydemo.view;
 
 import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Color;
@@ -44,6 +46,7 @@ public class SmileView extends LinearLayout implements Animator.AnimatorListener
 
     private String defaultLike = "喜欢";
     private String defalutDis = "无感";
+    private String defaluteShadow = "#7F484848";
     private ImageView imageDis;
     private TextView disNum;
     private TextView disText;
@@ -197,12 +200,29 @@ public class SmileView extends LinearLayout implements Animator.AnimatorListener
             public void onClick(View v) {
                 type = 1; //设置动画对象 //选择折行 哭脸
                 animBack(); //拉伸背景
+                setVisibities(VISIBLE); //隐藏文字
+                //切换背景色
+                setBackgroundColor(Color.parseColor(defaluteShadow));
+                likeBack.setBackgroundResource(R.drawable.shape_white_background);
+                disBack.setBackgroundResource(R.drawable.shape_yellow_background);
+                //重置帧动画
+                imageLike.setBackground(null);
+                imageLike.setBackgroundResource(R.drawable.animation_like);
+                animLike = (AnimationDrawable) imageLike.getBackground();
             }
         });
         imageLike.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                type = 0;
+                animBack();
+                setVisibities(VISIBLE);
+                setBackgroundColor(Color.parseColor(defaluteShadow));
+                disBack.setBackgroundResource(R.drawable.shape_white_background);
+                likeBack.setBackgroundResource(R.drawable.shape_yellow_background);
+                imageDis.setBackground(null);
+                imageDis.setBackgroundResource(R.drawable.animation_dislike);
+                animDis = (AnimationDrawable) imageDis.getBackground();
             }
         });
     }
@@ -238,6 +258,33 @@ public class SmileView extends LinearLayout implements Animator.AnimatorListener
     }
 
 
+
+    //背景收回动画
+    public void setBackUp() {
+        final int max = Math.max(like * 4, disLike * 4);
+        animatorBack = ValueAnimator.ofInt(max, 5);
+        animatorBack.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int magrin = (int) animation.getAnimatedValue();
+                LayoutParams paramsLike
+                        = (LayoutParams) imageLike.getLayoutParams();
+                paramsLike.bottomMargin = magrin;
+
+                if (magrin <= like * 4) {
+                    imageLike.setLayoutParams(paramsLike);
+                }
+                if (magrin <= disLike * 4) {
+                    imageDis.setLayoutParams(paramsLike);
+                }
+            }
+        });
+        animatorBack.addListener(this);
+        animatorBack.setDuration(500);
+        animatorBack.start();
+    }
+
+
     @Override
     public void onAnimationStart(Animator animation) {
 
@@ -245,8 +292,33 @@ public class SmileView extends LinearLayout implements Animator.AnimatorListener
 
     @Override
     public void onAnimationEnd(Animator animation) {
+        //重置帧动画
+        animDis.stop();
+        animLike.stop();
 
+        //关闭时不执行帧动画
+        if (isClose) {
+            //收回后可点击
+            imageDis.setClickable(true);
+            imageLike.setClickable(true);
+            //隐藏文字
+            setVisibities(GONE);
+            //恢复透明
+            setBackgroundColor(Color.TRANSPARENT);
+            return;
+        }
+        isClose = true;
+
+        if (type == 0) {
+            animLike.start();
+            objectY(imageLike);
+        } else {
+            animDis.start();
+            objectX(imageDis);
+        }
     }
+
+
 
     @Override
     public void onAnimationCancel(Animator animation) {
@@ -256,5 +328,36 @@ public class SmileView extends LinearLayout implements Animator.AnimatorListener
     @Override
     public void onAnimationRepeat(Animator animation) {
 
+    }
+
+
+    public void objectY(View view) {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationY", -10.0f, 0.0f, 10.0f, 0.0f, -10.0f, 0.0f, 10.0f, 0);
+        animator.setRepeatMode(ObjectAnimator.RESTART);
+        //animator.setRepeatCount(1);
+        animator.setDuration(1500);
+        animator.start();
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                setBackUp(); //执行回弹动画
+            }
+        });
+    }
+
+    public void objectX(View view) {
+
+        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationX", -10.0f, 0.0f, 10.0f, 0.0f, -10.0f, 0.0f, 10.0f, 0);
+        animator.setRepeatMode(ObjectAnimator.RESTART);
+        // animator.setRepeatCount(1);
+        animator.setDuration(1500);
+        animator.start();
+
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                setBackUp(); //执行回弹动画
+            }
+        });
     }
 }
