@@ -351,10 +351,11 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.fragment, viewAnimationUtilsFragment);
                 break;
             case R.id.menu_drawer_item_smileView:
-                tl_custom.setTitle("ViewAnimationUtils");
-                SmileFragment smileFragment = SmileFragment.newInstance(R.layout.fragment_viewanimation_utils);
+                tl_custom.setTitle("哭脸笑脸");
+                SmileFragment smileFragment = SmileFragment.newInstance(R.layout.fragment_smile);
                 fragmentTransaction.replace(R.id.fragment, smileFragment);
                 break;
+
             default:
                 break;
         }

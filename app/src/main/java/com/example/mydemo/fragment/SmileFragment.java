@@ -14,6 +14,7 @@ import android.widget.SeekBar;
 
 import com.example.mydemo.R;
 import com.example.mydemo.activity.SmileViewActivity;
+import com.example.mydemo.activity.SmileViewActivity2;
 
 /**
  * author : 宋佳
@@ -75,6 +76,13 @@ public class SmileFragment extends Fragment {
             }
         });
 
+        view.findViewById(R.id.btn_smileView2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SmileViewActivity2.class);
+                getActivity().startActivity(intent);
+            }
+        });
 
         return view;
 
