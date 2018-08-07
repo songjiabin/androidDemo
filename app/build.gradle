@@ -75,4 +75,7 @@ dependencies {
 //RecyclerViewHeader
     compile 'com.bartoszlipinski:recyclerviewheader2:2.0.1'
     compile 'com.sothree.slidinguppanel:library:3.3.1'
+
+
+    implementation 'com.android.support:design:25.1.0'
 }

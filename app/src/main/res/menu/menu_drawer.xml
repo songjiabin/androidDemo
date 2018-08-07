@@ -178,6 +178,18 @@
               android:title="ViewAnimationUtils"/>
     </group>
 
+    <group android:id="@+id/menu_drawer_group41">
+        <item android:id="@+id/menu_drawer_item_loading_view"
+              android:title="自定义LoadingView"/>
+    </group>
 
+    <group android:id="@+id/menu_drawer_group42">
+        <item android:id="@+id/menu_drawer_item_loading_view2"
+              android:title="自定义LoadingView"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group43">
+        <item android:id="@+id/menu_drawer_item_radar"
+              android:title="自定义雷达"/>
+    </group>
 
 </menu>

@@ -3,4 +3,6 @@
     <color name="colorDefault">#ffffff</color>
     <color name="colorBackground">#f1f0f6</color>
     <color name="colorText">#9b9b9b</color>
+
+    <color name="black">#000000</color>
 </resources>

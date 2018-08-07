@@ -17,4 +17,11 @@
 
 
     </declare-styleable>
+
+
+    <declare-styleable name="MyLoadingViewStyle">
+        <attr name="lineWidth" format="float"/>
+        <attr name="viewColor" format="color"/>
+    </declare-styleable>
+
 </resources>

@@ -355,7 +355,23 @@ public class MainActivity extends AppCompatActivity {
                 SmileFragment smileFragment = SmileFragment.newInstance(R.layout.fragment_smile);
                 fragmentTransaction.replace(R.id.fragment, smileFragment);
                 break;
+            case R.id.menu_drawer_item_loading_view:
+                tl_custom.setTitle("自定义LoadingView");
+                showFragment = ShowFragment.newInstance(R.layout.fragment_loading_view);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
 
+            case R.id.menu_drawer_item_loading_view2:
+                tl_custom.setTitle("自定义LoadingView2");
+                showFragment = ShowFragment.newInstance(R.layout.fragment_loading_view2);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+
+            case R.id.menu_drawer_item_radar:
+                tl_custom.setTitle("自定义雷达");
+                showFragment = ShowFragment.newInstance(R.layout.layout_radar_view);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
             default:
                 break;
         }
