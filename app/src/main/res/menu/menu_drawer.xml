@@ -191,5 +191,13 @@
         <item android:id="@+id/menu_drawer_item_radar"
               android:title="自定义雷达"/>
     </group>
+    <group android:id="@+id/menu_drawer_group44">
+        <item android:id="@+id/menu_drawer_item_turnable"
+              android:title="自定义转盘"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group45">
+        <item android:id="@+id/menu_drawer_item_path"
+              android:title="自定义path学习"/>
+    </group>
 
 </menu>

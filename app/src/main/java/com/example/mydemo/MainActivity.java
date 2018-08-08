@@ -372,6 +372,18 @@ public class MainActivity extends AppCompatActivity {
                 showFragment = ShowFragment.newInstance(R.layout.layout_radar_view);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
                 break;
+
+            case R.id.menu_drawer_item_turnable:
+                tl_custom.setTitle("自定义转盘");
+                showFragment = ShowFragment.newInstance(R.layout.layout_turntable);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+
+            case R.id.menu_drawer_item_path:
+                tl_custom.setTitle("自定义path学习");
+                showFragment = ShowFragment.newInstance(R.layout.layout_path_view);
+                fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
             default:
                 break;
         }
