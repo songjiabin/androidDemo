@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/test_menu1"
+        android:icon="@android:drawable/ic_menu_more"
+        android:title="测试1"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/test_menu2"
+        android:icon="@android:drawable/ic_menu_month"
+        android:title="测试2"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/test_menu3"
+        android:icon="@android:drawable/ic_menu_slideshow"
+        android:title="测试3"
+        app:showAsAction="never"/>
+
+</menu>

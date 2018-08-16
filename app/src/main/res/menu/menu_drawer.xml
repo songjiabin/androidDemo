@@ -199,5 +199,13 @@
         <item android:id="@+id/menu_drawer_item_path"
               android:title="自定义path学习"/>
     </group>
+    <group android:id="@+id/menu_drawer_group46">
+        <item android:id="@+id/menu_drawer_item_toolBar"
+              android:title="自定义ToolBar学习"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group47">
+        <item android:id="@+id/menu_drawer_item_popular"
+              android:title="自定义popular学习"/>
+    </group>
 
 </menu>

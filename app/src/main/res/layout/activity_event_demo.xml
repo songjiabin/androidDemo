@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_height="match_parent">
+
+
+    <com.example.mydemo.view.ViewGroupA
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@android:color/holo_red_light"
+        android:orientation="vertical">
+
+        <com.example.mydemo.view.ViewGroupB
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@android:color/holo_blue_bright">
+
+            <com.example.mydemo.view.ViewC
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@android:color/black">
+            </com.example.mydemo.view.ViewC>
+        </com.example.mydemo.view.ViewGroupB>
+
+
+    </com.example.mydemo.view.ViewGroupA>
+
+
+</RelativeLayout>

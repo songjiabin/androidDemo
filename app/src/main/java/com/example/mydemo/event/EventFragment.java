@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mydemo.R;
+import com.example.mydemo.activity.EventDemoActivity3;
 
 /**
  * author : 宋佳
@@ -49,6 +50,14 @@ public class EventFragment extends Fragment {
             public void onClick(View v) {
                 //内部拦截法
                 Intent intent = new Intent(getActivity(), EventDemoActivity2.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        view.findViewById(R.id.btn_3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), EventDemoActivity3.class);
                 getActivity().startActivity(intent);
             }
         });

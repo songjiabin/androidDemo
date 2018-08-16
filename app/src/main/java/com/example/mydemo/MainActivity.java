@@ -3,6 +3,7 @@ package com.example.mydemo;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -16,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.activity.PopularWindowActivity;
+import com.example.mydemo.activity.ToolBarActivity;
 import com.example.mydemo.event.EventFragment;
 import com.example.mydemo.fragment.AndroidToJsFragment;
 import com.example.mydemo.fragment.BankPickerFragment;
@@ -128,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         // 步骤2：获取FragmentTransaction
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         ShowFragment showFragment = null;
-        showFragment = ShowFragment.newInstance(R.layout.layout_measure);
+        showFragment = ShowFragment.newInstance(R.layout.layout_my_progress);
         fragmentTransaction.replace(R.id.fragment, showFragment);
         fragmentTransaction.commit();
 
@@ -383,6 +386,17 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("自定义path学习");
                 showFragment = ShowFragment.newInstance(R.layout.layout_path_view);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
+                break;
+
+            case R.id.menu_drawer_item_toolBar:
+                tl_custom.setTitle("自定义ToolBar学习");
+                Intent intent = new Intent(this, ToolBarActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_drawer_item_popular:
+                tl_custom.setTitle("自定义popular使用（单选和多选的实现）");
+                Intent intentPopular = new Intent(this, PopularWindowActivity.class);
+                startActivity(intentPopular);
                 break;
             default:
                 break;

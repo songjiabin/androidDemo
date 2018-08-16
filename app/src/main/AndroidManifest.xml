@@ -15,19 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
-
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
 
 
         </activity>
 
-    <activity android:name=".DemoActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-
-            <category android:name="android.intent.category.LAUNCHER"/>
-        </intent-filter>
-    </activity>
+        <activity android:name=".DemoActivity">
+        </activity>
 
 
         <activity android:name=".event.EventDemoActivity">
@@ -56,6 +54,9 @@
 
         </activity>
         <activity android:name=".activity.ScrollingActivity"></activity>
+        <activity android:name=".activity.EventDemoActivity3"></activity>
+        <activity android:name=".activity.ToolBarActivity"/>
+        <activity android:name=".activity.PopularWindowActivity"/>
     </application>
 
 </manifest>
