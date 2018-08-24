@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_layout_method"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/colorYellow"
+            android:gravity="center"
+            android:text="layout方法"/>
+
+
+        <TextView
+            android:id="@+id/tv_animator_method"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="right"
+            android:background="@color/colorYellow"
+            android:gravity="center"
+            android:text="使用动画来进行移动View"/>
+
+
+        <TextView
+            android:id="@+id/tv_animator_method_set_get"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorYellow"
+            android:gravity="center"
+            android:text="使用动画来进行移动View(set,get)"/>
+
+
+        <TextView
+            android:id="@+id/tv_animator_method_srcollto_scrollby"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom|right"
+            android:background="@color/colorYellow"
+            android:gravity="center"
+            android:text="使用动画来进行移动View(scrollto,scrollby)"/>
+        <TextView
+            android:id="@+id/tv_animator_method_srcoll"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@color/colorYellow"
+            android:gravity="center"
+            android:text="使用动画来进行移动View(scroll)"/>
+
+    </FrameLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="2dp"
+          android:background="@android:color/black"
+    />
+
+    <LinearLayout
+        android:id="@+id/fl_remove_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical">
+
+    </LinearLayout>
+
+
+</LinearLayout>

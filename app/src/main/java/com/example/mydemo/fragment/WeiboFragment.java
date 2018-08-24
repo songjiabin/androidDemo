@@ -14,6 +14,7 @@ import com.example.mydemo.activity.ScrollingActivity;
 import com.example.mydemo.activity.WeiBoActivity2;
 import com.example.mydemo.activity.WeiBoActivity3;
 import com.example.mydemo.activity.WeiboActivity;
+import com.example.mydemo.activity.WeiboActivity4;
 
 /**
  * author : 宋佳
@@ -66,6 +67,14 @@ public class WeiboFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ScrollingActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        view.findViewById(R.id.textview5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), WeiboActivity4.class);
                 getActivity().startActivity(intent);
             }
         });

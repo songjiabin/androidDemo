@@ -17,7 +17,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.activity.OtherRecyclerProgressActivity;
+import com.example.mydemo.activity.OtherRecyclerViewActivity;
 import com.example.mydemo.activity.PopularWindowActivity;
+import com.example.mydemo.activity.RemoveViewActivity;
 import com.example.mydemo.activity.ToolBarActivity;
 import com.example.mydemo.event.EventFragment;
 import com.example.mydemo.fragment.AndroidToJsFragment;
@@ -397,6 +400,21 @@ public class MainActivity extends AppCompatActivity {
                 tl_custom.setTitle("自定义popular使用（单选和多选的实现）");
                 Intent intentPopular = new Intent(this, PopularWindowActivity.class);
                 startActivity(intentPopular);
+                break;
+            case R.id.menu_drawer_item_recyview:
+                tl_custom.setTitle("other recyclerView学习");
+                Intent otherRecyclerViewIntent = new Intent(this, OtherRecyclerViewActivity.class);
+                startActivity(otherRecyclerViewIntent);
+                break;
+            case R.id.menu_drawer_item_recyview_progress:
+                tl_custom.setTitle("recyclerView_progress 复用");
+                Intent otherRecyclerViewProgressIntent = new Intent(this, OtherRecyclerProgressActivity.class);
+                startActivity(otherRecyclerViewProgressIntent);
+                break;
+            case R.id.menu_drawer_item_remove_view:
+                tl_custom.setTitle("View的滑动到方式");
+                Intent removeViewIntent = new Intent(this, RemoveViewActivity.class);
+                startActivity(removeViewIntent);
                 break;
             default:
                 break;

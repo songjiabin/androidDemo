@@ -48,7 +48,7 @@ public class ToolBarActivity extends AppCompatActivity {
         //侧边栏的按钮  比如返回的那个
         mToolbar.setNavigationIcon(android.R.drawable.checkbox_on_background);
         //取代原本的actionbar
-        setSupportActionBar(mToolbar);
+//        setSupportActionBar(mToolbar);
 
 
         mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
@@ -65,6 +65,8 @@ public class ToolBarActivity extends AppCompatActivity {
         });
 
 
+
+        mToolbar.inflateMenu(R.menu.menu_toobar);
         //设置toolBar上的MenuItem点击事件
         mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override

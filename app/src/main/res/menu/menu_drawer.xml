@@ -207,5 +207,17 @@
         <item android:id="@+id/menu_drawer_item_popular"
               android:title="自定义popular学习"/>
     </group>
+    <group android:id="@+id/menu_drawer_group48">
+        <item android:id="@+id/menu_drawer_item_recyview"
+              android:title="other recyclerView学习"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group49">
+        <item android:id="@+id/menu_drawer_item_recyview_progress"
+              android:title="other recyclerView进度条复用"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group50">
+        <item android:id="@+id/menu_drawer_item_remove_view"
+              android:title="View的滑动到方式"/>
+    </group>
 
 </menu>

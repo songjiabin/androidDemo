@@ -1,49 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!--
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!--
   ?attr/actionBarSize:表示根据屏幕的分辨率采用系统默认的高度
   如果低版本也要使用的话,则需要使用v7包的,否则只有api21上才能有效
   -->
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary">
-        <!--添加Toolbar的子控件-->
-        <Button
-            android:id="@+id/btn_diy"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="#80ffffff"
-            android:text="自定义按钮"
-            android:textColor="#000000"
-            android:textSize="11sp"/>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:minHeight="40dp"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed"
+            app:popupTheme="@style/ToolbarPopupTheme">
+            <!--添加Toolbar的子控件-->
+            <Button
+                android:id="@+id/btn_diy"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="#80ffffff"
+                android:text="自定义按钮"
+                android:textColor="#000000"
+                android:textSize="11sp"/>
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="首页"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="首页"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
 
-    </android.support.v7.widget.Toolbar>
+        </android.support.v7.widget.Toolbar>
 
-    <TextView
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="hello_world"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/large_text"/>
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -23,10 +23,26 @@
               android:layout_height="wrap_content"
               android:layout_marginTop="100dp"
               android:text="仿照微博主页3"/>
+
+
+    <TextView
+        android:id="@+id/textview5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="仿照微博主页5"/>
     <TextView android:id="@+id/textview4"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginTop="100dp"
               android:text="仿支付宝4"/>
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="仿照微博主页4"/>
+
 
 </LinearLayout>
