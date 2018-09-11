@@ -20,7 +20,9 @@ import android.widget.FrameLayout;
 import com.example.mydemo.activity.OtherRecyclerProgressActivity;
 import com.example.mydemo.activity.OtherRecyclerViewActivity;
 import com.example.mydemo.activity.PopularWindowActivity;
+import com.example.mydemo.activity.QQSkidActivity;
 import com.example.mydemo.activity.RemoveViewActivity;
+import com.example.mydemo.activity.ScrollerActivity;
 import com.example.mydemo.activity.ToolBarActivity;
 import com.example.mydemo.event.EventFragment;
 import com.example.mydemo.fragment.AndroidToJsFragment;
@@ -412,9 +414,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(otherRecyclerViewProgressIntent);
                 break;
             case R.id.menu_drawer_item_remove_view:
-                tl_custom.setTitle("View的滑动到方式");
+                tl_custom.setTitle("View的滑动方式");
                 Intent removeViewIntent = new Intent(this, RemoveViewActivity.class);
                 startActivity(removeViewIntent);
+                break;
+            case R.id.menu_drawer_item_scroller2:
+                tl_custom.setTitle("View的滑动方式");
+                Intent srollViewIntent = new Intent(this, ScrollerActivity.class);
+                startActivity(srollViewIntent);
+                break;
+
+            case R.id.menu_drawer_scroller_qq:
+                tl_custom.setTitle("仿照qq侧滑");
+                Intent intent1=new Intent(this,QQSkidActivity.class);
+                startActivity(intent1);
+
                 break;
             default:
                 break;

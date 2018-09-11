@@ -24,4 +24,10 @@
         <attr name="viewColor" format="color"/>
     </declare-styleable>
 
+
+    <declare-styleable name="MySkipStyle">
+        <attr name="item_id" format="reference"/>
+    </declare-styleable>
+
+
 </resources>

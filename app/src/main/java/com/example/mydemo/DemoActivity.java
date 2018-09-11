@@ -3,15 +3,8 @@ package com.example.mydemo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.example.mydemo.bean.BankModel;
-import com.example.mydemo.view.BankPickerView;
-import com.orhanobut.logger.Logger;
-
-import java.util.List;
+import com.example.mydemo.view.MyScrollerView;
 
 /**
  * author : 宋佳
@@ -23,23 +16,13 @@ import java.util.List;
 public class DemoActivity extends AppCompatActivity {
 
 
-    private BankPickerView mPickerView;
-    private List<BankModel> mData;
-    private TextView mBankName1;
-
-    private RelativeLayout viewGroup;
-    private View view;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo_demo);
+        setContentView(R.layout.activity_scrolling2);
 
-        viewGroup = (RelativeLayout) findViewById(R.id.viewGroup);
-
-        view = (View) findViewById(R.id.view);
-
-        view.setTranslationX(10f);
+        MyScrollerView myScrollerView = (MyScrollerView) findViewById(R.id.MyScrollerView);
+        myScrollerView.beginScroll();
 
 
     }
@@ -48,12 +31,7 @@ public class DemoActivity extends AppCompatActivity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        int left = view.getLeft();
-        int x = (int) view.getX();
 
 
-
-
-        Logger.d("left--》", left, "X--》" + x);
     }
 }

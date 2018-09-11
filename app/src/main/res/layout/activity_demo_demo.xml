@@ -2,28 +2,21 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
-    <RelativeLayout
-        android:id="@+id/viewGroup"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:background="@android:color/holo_red_light">
-
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="50dp"
-            android:background="@android:color/darker_gray"
-        />
-
-
-    </RelativeLayout>
-
+    <com.example.mydemo.view.ScrollerLayoutView2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_width="50dp"
+                  android:layout_height="50dp"
+                  android:background="@android:color/black"/>
+        <TextView android:layout_width="50dp"
+                  android:layout_height="50dp"
+                  android:background="@android:color/holo_orange_dark"/>
+        <TextView android:layout_width="50dp"
+                  android:layout_height="50dp"
+                  android:background="@android:color/holo_blue_bright"/>
+    </com.example.mydemo.view.ScrollerLayoutView2>
 
 </RelativeLayout>

@@ -219,5 +219,13 @@
         <item android:id="@+id/menu_drawer_item_remove_view"
               android:title="View的滑动到方式"/>
     </group>
+    <group android:id="@+id/menu_drawer_group51">
+        <item android:id="@+id/menu_drawer_item_scroller2"
+              android:title="scroller2"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group52">
+        <item android:id="@+id/menu_drawer_scroller_qq"
+              android:title="仿qq侧滑"/>
+    </group>
 
 </menu>

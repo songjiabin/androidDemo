@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -25,6 +24,7 @@
         </activity>
 
         <activity android:name=".DemoActivity">
+
 
         </activity>
 
@@ -62,7 +62,8 @@
         <activity android:name=".activity.OtherRecyclerViewActivity"/>
         <activity android:name=".activity.OtherRecyclerProgressActivity"/>
         <activity android:name=".activity.RemoveViewActivity"/>
-
+        <activity android:name=".activity.ScrollerActivity"/>
+        <activity android:name=".activity.QQSkidActivity"/>
     </application>
 
 </manifest>
