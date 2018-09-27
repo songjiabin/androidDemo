@@ -42,7 +42,8 @@ public class QQSkidActivity extends AppCompatActivity {
     private List<String> getStringLists() {
         ArrayList<String> list = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            list.add("第" + i + "条数据");
+//            list.add("第" + i + "条数据");
+            list.add("");
         }
         return list;
     }

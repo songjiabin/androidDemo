@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Scroller;
 
 import com.example.mydemo.R;
 
@@ -20,6 +21,7 @@ import com.example.mydemo.R;
 
 public class SkipLayout extends LinearLayout {
 
+    private Scroller mScroller;
     // 这个
     private int itemId;
     private int mDownX, mDownY, mLastX; // 按下X  按下Y  最后一次按下 X  的位置
@@ -37,7 +39,7 @@ public class SkipLayout extends LinearLayout {
 
 
     public SkipLayout(Context context) {
-        this(context,null);
+        this(context, null);
 
     }
 
@@ -48,15 +50,15 @@ public class SkipLayout extends LinearLayout {
 
 
     public SkipLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs,defStyleAttr);
+        super(context, attrs, defStyleAttr);
         setOrientation(HORIZONTAL);//水平排布
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MySkipStyle);
 
 
-        itemId = typedArray.getResourceId(R.styleable.MySkipStyle_item_id, 0);
+        itemId = typedArray.getResourceId(R.styleable.MySkipStyle_item_layout_id, 0);
 
         typedArray.recycle();
-
+        mScroller = new Scroller(getContext());
     }
 
 
@@ -71,9 +73,21 @@ public class SkipLayout extends LinearLayout {
 
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        measureChildren(widthMeasureSpec, heightMeasureSpec);
+
+        setMeasuredDimension(widthMeasureSpec, heightMeasureSpec);
+    }
+
+
+    @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         menuWidth = itemView.getMeasuredWidth();
+        Log.d("高度是：", menuWidth + "");
         super.onLayout(changed, l, t, r, b);
+//        menuWidth= ScreenUtils.getScreenWidth(getContext());
+//        Log.d("高度是：", menuWidth + "");
+
     }
 
     @Override
@@ -95,39 +109,53 @@ public class SkipLayout extends LinearLayout {
                     return false;
 
                 //左右滑动的距离
-                int deltalX = (int) (mLastX - event.getX());
+//                int deltalX = (int) (mLastX - event.getX());
+
+
+                int deltalX = (int) event.getX() - mLastX;
+
+                Log.i("deltalX--->",deltalX+"");
+
                 if (deltalX > 0) {
-                    //向左滑动
-                    currentScrollState = STATE_MOVING_LEFT;
+                    //向右边滑动
+                    break;
 
-
-                    Log.i("宋佳宾","deltalX--->   "+deltalX);
-
-                    Log.i("宋佳宾","menuWidth--->   "+menuWidth);
-
-                    Log.i("宋佳宾","getScrollX--->   "+getScrollX());
-
-
-                    if (deltalX >= menuWidth || getScrollX() + deltalX >= menuWidth) {
-                        //右边缘检测
-                       /* scrollTo(menuWidth, 0);
-                        currentState = STATE_OPEN;*/
-                        break;
-                    }
-
-                } else {
-                    //向右滑动
+                } else if (deltalX < 0) {
+                    //向左边滑动
                     currentScrollState = STATE_MOVING_RIGHT;
+
+
+                 /*   if (-deltalX > menuWidth) {
+                        this.scrollTo(menuWidth, 0);
+
+                        break;
+                    }*/
+
+
                 }
-
-
+                this.scrollBy(-deltalX, 0);
+                mLastX = (int) event.getX();
+                break;
+            case MotionEvent.ACTION_UP:
+                //抬起的时候
+                mScroller.startScroll(getScrollX(), 0, menuWidth - getScrollX(), 0, 3000);
                 break;
             default:
                 break;
         }
-
-
         return super.onTouchEvent(event);
-
     }
+
+    @Override
+    public void computeScroll() {
+        // 第三步，重写computeScroll()方法，并在其内部完成平滑滚动的逻辑
+        //当还没有平滑完成的时候 、
+        // 判断是否完成滚动，如果没有滚动完成返回True(你要对其进行操作),如果返回false 表示不再滚动啦
+        if (mScroller.computeScrollOffset()) {
+            scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
+            invalidate();
+        }
+    }
+
+
 }

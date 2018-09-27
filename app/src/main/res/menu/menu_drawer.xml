@@ -227,5 +227,9 @@
         <item android:id="@+id/menu_drawer_scroller_qq"
               android:title="仿qq侧滑"/>
     </group>
+    <group android:id="@+id/menu_drawer_group53">
+        <item android:id="@+id/menu_drawer_viewGroup"
+              android:title="ViewGroup"/>
+    </group>
 
 </menu>

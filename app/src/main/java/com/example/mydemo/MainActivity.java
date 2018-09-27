@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.activity.MyViewGroupActivity;
 import com.example.mydemo.activity.OtherRecyclerProgressActivity;
 import com.example.mydemo.activity.OtherRecyclerViewActivity;
 import com.example.mydemo.activity.PopularWindowActivity;
@@ -426,8 +427,15 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.menu_drawer_scroller_qq:
                 tl_custom.setTitle("仿照qq侧滑");
-                Intent intent1=new Intent(this,QQSkidActivity.class);
+                Intent intent1 = new Intent(this, QQSkidActivity.class);
                 startActivity(intent1);
+
+                break;
+
+            case R.id.menu_drawer_viewGroup:
+                tl_custom.setTitle("ViewGroup");
+                Intent intent_viewGroup = new Intent(this, MyViewGroupActivity.class);
+                startActivity(intent_viewGroup);
 
                 break;
             default:

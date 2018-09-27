@@ -2,7 +2,6 @@ package com.example.mydemo.adapter;
 
 import android.content.Context;
 
-import com.example.mydemo.R;
 import com.example.mydemo.superadapter.SuperAdapter;
 import com.example.mydemo.superadapter.SuperViewHolder;
 
@@ -24,6 +23,6 @@ public class QQSkipAdapter extends SuperAdapter<String> {
 
     @Override
     public void onBind(SuperViewHolder holder, int viewType, int layoutPosition, String item) {
-        holder.setText(R.id.tv_content, item);
+//        holder.setText(R.id.tv_content, item);
     }
 }
