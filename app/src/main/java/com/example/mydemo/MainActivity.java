@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.fragment, myAnimationDemoFragment);
                 break;
             case R.id.menu_drawer_item_myViewGroup2:
-                tl_custom.setTitle("ViewGropu");//设置Toolbar标题
+                tl_custom.setTitle("ViewGroup");//设置Toolbar标题
                 showFragment = ShowFragment.newInstance(R.layout.layout_my_viewgroup2);
                 fragmentTransaction.replace(R.id.fragment, showFragment);
                 break;

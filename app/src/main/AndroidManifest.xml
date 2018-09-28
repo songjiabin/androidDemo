@@ -65,6 +65,8 @@
         <activity android:name=".activity.ScrollerActivity"/>
         <activity android:name=".activity.QQSkidActivity"/>
         <activity android:name=".activity.MyViewGroupActivity"/>
+        <activity android:name=".activity.OtherViewGroupActivity"/>
+        <activity android:name=".activity.OtherViewGroupFourCornersActivity"/>
     </application>
 
 </manifest>

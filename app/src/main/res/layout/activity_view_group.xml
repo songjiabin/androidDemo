@@ -8,9 +8,23 @@
 
 
     <Button
+        android:id="@+id/btn_other_viewGroup"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/colorDefault"/>
+        android:background="@color/colorDefault"
+        android:text="另外一个ViewGroup案例(两行，每行顺序排列的)"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+          android:background="@color/black"
+    />
+
+    <Button
+        android:id="@+id/btn_other_viewGroup2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorDefault"
+        android:text="另外一个ViewGroup案例(四个角有四个View)"/>
+
 
     <com.example.mydemo.viewgroup.MyViewGroup3
         android:layout_width="wrap_content"

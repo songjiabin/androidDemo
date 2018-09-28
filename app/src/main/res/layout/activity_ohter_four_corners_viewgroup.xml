@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.mydemo.viewgroup.MyViewGroup2
+<com.example.mydemo.viewgroup.OtherViewGroup_fourCorners
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-
     <TextView
         android:layout_width="50dp"
+        android:layout_marginTop="20dp"
         android:layout_height="50dp"
-        android:gravity="center"
+        android:layout_marginLeft="10dp"
         android:background="@android:color/holo_green_light"
+        android:gravity="center"
         android:text="1"/>
 
     <TextView
+        android:layout_marginRight="40dp"
         android:layout_width="50dp"
-        android:gravity="center"
         android:layout_height="50dp"
         android:background="@android:color/holo_blue_bright"
+        android:gravity="center"
         android:text="2"/>
 
 
     <TextView
         android:layout_width="100dp"
-        android:gravity="center"
         android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+
         android:background="@android:color/holo_red_light"
+        android:gravity="center"
         android:text="3"/>
 
     <TextView
+        android:layout_marginLeft="20dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@android:color/background_dark"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/holo_orange_dark"
         android:gravity="center"
         android:text="4"/>
-</com.example.mydemo.viewgroup.MyViewGroup2>
+</com.example.mydemo.viewgroup.OtherViewGroup_fourCorners>
