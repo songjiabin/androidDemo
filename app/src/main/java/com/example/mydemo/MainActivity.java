@@ -17,13 +17,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.mydemo.activity.GetPhoneNumberActivity;
 import com.example.mydemo.activity.MyViewGroupActivity;
+import com.example.mydemo.activity.ObjectBoxActivity;
+import com.example.mydemo.activity.OkHttpActivity;
 import com.example.mydemo.activity.OtherRecyclerProgressActivity;
 import com.example.mydemo.activity.OtherRecyclerViewActivity;
 import com.example.mydemo.activity.PopularWindowActivity;
 import com.example.mydemo.activity.QQSkidActivity;
 import com.example.mydemo.activity.RemoveViewActivity;
+import com.example.mydemo.activity.RxJavaDemoActivity;
 import com.example.mydemo.activity.ScrollerActivity;
+import com.example.mydemo.activity.ServiceActivity;
 import com.example.mydemo.activity.ToolBarActivity;
 import com.example.mydemo.event.EventFragment;
 import com.example.mydemo.fragment.AndroidToJsFragment;
@@ -437,6 +442,32 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent_viewGroup = new Intent(this, MyViewGroupActivity.class);
                 startActivity(intent_viewGroup);
 
+                break;
+
+            case R.id.menu_drawer_okhttp:
+                tl_custom.setTitle("ViewGroup");
+                Intent intent_okhttp = new Intent(this, OkHttpActivity.class);
+                startActivity(intent_okhttp);
+
+                break;
+            case R.id.menu_drawer_get_phone_number:
+                tl_custom.setTitle("获取本机号码");
+                Intent intent_get_phone_number = new Intent(this, GetPhoneNumberActivity.class);
+                startActivity(intent_get_phone_number);
+            case R.id.menu_drawer_start_service:
+                tl_custom.setTitle("Service");
+                Intent intent_service = new Intent(this, ServiceActivity.class);
+                startActivity(intent_service);
+                break;
+            case R.id.menu_drawer_start_rxjava:
+                tl_custom.setTitle("rxjava");
+                Intent intent_rxjava = new Intent(this, RxJavaDemoActivity.class);
+                startActivity(intent_rxjava);
+                break;
+            case R.id.menu_drawer_start_objbox:
+                tl_custom.setTitle("objectBox");
+                Intent intent_objectBox = new Intent(this, ObjectBoxActivity.class);
+                startActivity(intent_objectBox);
                 break;
             default:
                 break;

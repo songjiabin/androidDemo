@@ -231,5 +231,26 @@
         <item android:id="@+id/menu_drawer_viewGroup"
               android:title="ViewGroup"/>
     </group>
+    <group android:id="@+id/menu_drawer_group54">
+        <item android:id="@+id/menu_drawer_okhttp"
+              android:title="okhttp"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group55">
+        <item android:id="@+id/menu_drawer_get_phone_number"
+              android:title="获取本机号码"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group56">
+        <item android:id="@+id/menu_drawer_start_service"
+              android:title="Service"/>
+    </group>
+
+    <group android:id="@+id/menu_drawer_group57">
+        <item android:id="@+id/menu_drawer_start_rxjava"
+              android:title="Rxjava"/>
+    </group>
+    <group android:id="@+id/menu_drawer_group58">
+        <item android:id="@+id/menu_drawer_start_objbox"
+              android:title="objectbox"/>
+    </group>
 
 </menu>

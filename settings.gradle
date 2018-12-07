@@ -1,1 +1,1 @@
-include ':app', ':searchview', ':rxjava', ':JPushExample(1024062)'
+include ':app', ':searchview', ':rxjava', ':JPushExample(1024062)', ':sdklibrary'

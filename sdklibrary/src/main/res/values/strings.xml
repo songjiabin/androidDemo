@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">sdklibrary</string>
+
+    <string name="menu_about">○\t\t\t\t\t\t关于</string>
+    <string name="menu_coffee">○\t\t\t\t\t\t请我喝咖啡</string>
+    <string name="menu_open_source">○\t\t\t\t\t\t开源相关</string>
+    <string name="menu_clear_cache">○\t\t\t\t\t\t缓存清理</string>
+    <string name="menu_feedback">○\t\t\t\t\t\t意见反馈</string>
+    <string name="menu_collection">○\t\t\t\t\t\t本地收藏</string>
+    <string name="menu_widget_theme">○\t\t\t\t\t\t插件主题</string>
+
+    <string name="nav_menu_update">○\t\t\t\t\t\t检测升级</string>
+
+
+</resources>
